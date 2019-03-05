@@ -37,7 +37,14 @@
           </div>
         </div>
         <div class="box-body">
-          Start creating your amazing application!
+          <table class="table table-hover">
+            <tr class="info">
+              <th>No.</th>
+              <th>Title</th>
+              <th>Izmijeni/Obriši</th>
+            </tr>
+            
+          </table>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
@@ -54,7 +61,6 @@
 
   <?php include "layout/rightsidebar.php"; ?>
 <!-- ./wrapper -->
-
 <?php include "layout/scripts.php"; ?>
 </body>
 </html>
