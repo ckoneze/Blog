@@ -15,6 +15,13 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-comment"></i>
+              <span class="label label-success">4</span>
+            </a></li>
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-plus"></i><span class="hidden-xs"> Add post</span>
+            </a></li>
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
