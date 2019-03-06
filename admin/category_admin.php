@@ -26,8 +26,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
+          
+          <a href="fukategorije.php"><button type="button" class="btn btn-primary">Add new</button></a>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">
@@ -37,18 +37,95 @@
           </div>
         </div>
         <div class="box-body">
+           <table>
+            <tr>
+               <th>
+                 <select class="form-control" id="exampleFormControlSelect1">
+                  <option >Group action</option>
+                  <option>Delete</option>
+                  <option>Publish</option>
+                  <option>Unpublish</option>
+                </select>
+               </th>
+               <th>&nbsp;</th>
+               <th>
+                  <a href="fukategorije.php"><button type="button" class="btn btn-default">Apply</button></a>
+               </th>
+             
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               
+               
+               <th class="text-right">
+                  <input type="text" name="" class="form-control">
+              </th>
+              <th>&nbsp;</th>
+              <th class="text-right">
+                  <a href="fukategorije.php"><button type="button" class="btn btn-default">Search</button></a>
+               </th>
+             </tr>
+
+           </table>
+            <br>
           <table class="table table-hover">
             <tr class="info">
-              <th>No.</th>
+              <th><input type="checkbox"></th>
               <th>Title</th>
-              <th>Izmijeni/Obriši</th>
+              <th>Description</th>
+              <th>Posts</th>
+              <th>Edit/Delete</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>Hardware</td>
+              <td>This is categor for hardware</td>
+              <td>24</td>
+              <td>
+                <a href="fekategorije.php?edit=<?=$idkategorije ?>"><button type="button" name="edit" class="btn btn-warning">Edit</button></a>
+                <a href="fpkategorije.php?delete=<?=$idkategorije ?>"><button type="button" name="delete" class="btn btn-danger">Delete</button></a>
+              </td>
             </tr>
             
           </table>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          Footer
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
         </div>
         <!-- /.box-footer-->
       </div>
