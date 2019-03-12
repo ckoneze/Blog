@@ -185,7 +185,15 @@
 
         $sql_add_category = "INSERT INTO categories(cat_title,cat_desc, cat_slug, cat_date, cat_edit_date, cat_status) VALUES('$add_cat_title', '$add_cat_desc', '$add_cat_slug', '$current_date', '$current_date', '$add_cat_status')";
         $result_sql_add_category= mysqli_query($dbconnection, $sql_add_category);
+        if (!$result_sql_add_category)
+                {
+                  die("Niste snimili u bazu" . mysqli_error());
+                }
+                else
+                {
+                  echo "Uspiješno snimljeno";
         header("Location: category_admin.php");
+                }
       }
      ?>
 
