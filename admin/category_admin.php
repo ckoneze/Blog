@@ -343,8 +343,8 @@
         <div class="modal fade" id="EditCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-              <div class="modal-header modal-header-primary">
-                <h4 class="modal-title" id="exampleModalLongTitle" align="center">Add new category</h4>
+              <div class="modal-header modal-header-warning">
+                <h4 class="modal-title" id="exampleModalLongTitle" align="center">Edit category</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
