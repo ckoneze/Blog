@@ -40,11 +40,11 @@
                 $group_options = $_POST['group_options'];
                 switch ($group_options) {
                   case '1':
-                    $sql_group_publish = "UPDATE post SET cat_status= '{$group_options}' WHERE id={$checked_Box_Category_Id}";
+                    $sql_group_publish = "UPDATE categories SET cat_status= '{$group_options}' WHERE id={$checked_Box_Category_Id}";
                      $result_sql_group_publish= mysqli_query($dbconnection, $sql_group_publish);
                     break;
                   case '0':
-                    $sql_group_unpublish = "UPDATE post SET cat_status= '{$group_options}' WHERE id={$checked_Box_Category_Id}";
+                    $sql_group_unpublish = "UPDATE categories SET cat_status= '{$group_options}' WHERE id={$checked_Box_Category_Id}";
                      $result_sql_group_unpublish= mysqli_query($dbconnection, $sql_group_unpublish);
                     break;
                   case 'delete':
@@ -153,7 +153,7 @@
             </tr>
             <?php 
                 $counter= 0;
-                $sql_select_category = "SELECT * FROM categories ORDER BY cat_status asc";
+                $sql_select_category = "SELECT * FROM categories ORDER BY id desc";
                 $result_sql_select_category = mysqli_query($dbconnection, $sql_select_category);
                 while ($rowcategory = mysqli_fetch_assoc($result_sql_select_category))
                 {
@@ -256,11 +256,13 @@
                 }
       }
      ?>
-
+      <!--
+        <div class="modal fade" id="InsertCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      --> 
         <div class="modal fade" id="InsertCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-              <div class="modal-header modal-header-primary">
+              <div class="modal-header modal-header-add">
                 <h4 class="modal-title" id="exampleModalLongTitle" align="center">Add new category</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -280,16 +282,17 @@
                   <label for="cat_slug" class="col-form-label">Slug:</label>
                   <input type="text" class="form-control" id="cat_slug" name="cat_slug" placeholder="Enter Slug Here" required="">
                 </div>
-                <div class="col-sm-4">
+                <div class="form-group col-md-6">
                     <label for="cat_status" class="col-form-label" >Status:</label><br>
                     <input type="radio" name="cat_status" id="cat_status" value="1" checked=""> Publish
                     <input type="radio" name="cat_status" id="cat_status" value="0"> Draft
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                   <label for="cat_priority" class="col-form-label">Category priority:</label>
-                  <input type="text" class="form-control" id="cat_priority" name="cat_priority" placeholder="Enter category priority" required="">
+                  <input type="text" class="form-control" id="cat_priority" name="cat_priority" placeholder="Enter category priority number 0-9" required="">
                 </div>
               </div>
+              <br><br><br>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary" name="save_category"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
