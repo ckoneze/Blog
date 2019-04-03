@@ -91,8 +91,7 @@
                <th>
                   <button class="btn btn-search" type="submit" name="applyed"> Apply</button>
                </th>
-             
-               
+
                
                
                <th>
@@ -107,7 +106,7 @@
                   });
                 });
                 </script>
-                  <input class="form-control" type="text" placeholder="Search" id="myInput" aria-label="Search">
+                  <input class="col-xs-4" type="text" placeholder="Search" id="myInput" aria-label="Search">
               </th>
               
              </tr>
