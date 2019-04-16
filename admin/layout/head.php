@@ -111,4 +111,34 @@
 }
   </style>
   <!--//modal style--> 
+
+  <script src="https://cdn.ckeditor.com/4.11.2/standard-all/ckeditor.js"></script>
+
+  <style>
+    .ck-content { min-height:200px; max-height:400px; }
+  </style>
+  <style>
+.zoom1 {
+  padding: 50px;
+  background-color: white;
+  transition: transform .5s; /* Animation */
+  width: 1500px;
+  height: 1500px;
+  margin: 0 auto;
+}
+
+.zoom1:hover {
+  transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+ .zoom
+  {
+    
+    transition: all 0.5s;
+  }
+  .zoom:hover
+  {
+    transform: scale(3.1);
+    box-shadow: 4px 4px 1px #888888;
+  }
+</style>
 </head>

@@ -44,7 +44,7 @@ $('#EditCategory').on('show.bs.modal', function (event) {
   var cat_desc_edit = button.data('cat_desc_edit')
   var cat_slug_edit = button.data('cat_slug_edit')
   var cat_priority_edit = button.data('cat_priority_edit')
-  
+  var cat_date_edit = button.data('cat_date_edit')
     
   var modal = $(this)
   modal.find('.modal-body #cat_id_edit').val(id);
@@ -52,6 +52,7 @@ $('#EditCategory').on('show.bs.modal', function (event) {
   modal.find('.modal-body #cat_desc_edit').val(cat_desc_edit);
   modal.find('.modal-body #cat_slug_edit').val(cat_slug_edit);
   modal.find('.modal-body #cat_priority_edit').val(cat_priority_edit);
+  modal.find('.modal-body #cat_date_edit').val(cat_date_edit);
 
 })
 

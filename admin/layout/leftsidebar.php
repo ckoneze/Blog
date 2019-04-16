@@ -33,7 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="category_admin.php"><i class="fa fa-circle-o"></i> Category</a></li>
+            <li><a href="category_admin.php"><i class="fa fa-server"></i></i> Category</a></li>
             <li><a href="post_admin.php"><i class="fa fa-circle-o"></i> Post</a></li>
             <li><a href="../admin-template/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
