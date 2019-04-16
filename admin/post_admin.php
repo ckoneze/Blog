@@ -155,7 +155,7 @@
               <td style="text-align: center;">
                 <input type="checkbox" class="form-check-input" id="selectOneCheckBoxArray" name="selectOneCheckBoxArray[]" value="<?php echo $view_post_id; ?>">
               </td>
-              <td style="text-align: center;"><?php echo $view_post_title ?></td>
+              <td style="text-align: left;"><?php echo $view_post_title ?></td>
               <td style="text-align: center;"><?php echo $view_post_autor ?></td>
               <?php 
                     $sql_select_category_by_id = "SELECT * FROM categories WHERE id ={$view_post_category}";
@@ -169,7 +169,7 @@
               ?>
               <td style="text-align: center;"><?php echo $view_cat_title_by_id ?></td>
               <td style="text-align: center;"><img  class="zoom" src="images/blog/<?php  echo $view_post_image; ?>" width="50"></td>
-              <td style="text-align: center;"><?php echo $view_post_visit_counter ?></td>
+              <td style="text-align: center;"><span class="label label-success"><?php echo $view_post_visit_counter ?></span></td>
               <?php 
                 if ($view_post_status==1)
                 {
@@ -184,7 +184,7 @@
               <?php
                 }
               ?>
-              <td style="text-align: center;">156</td>
+              <td style="text-align: center;"><span class="label label-success">23584</span></td>
               <td style="text-align: center;">
 
                 <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditPost" data-post_id_edit="<?= $view_post_id ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
@@ -260,7 +260,7 @@
                 else
                 {
                   echo "Data added successfully";
-        header("Location: post_admin.php");
+                  header("Location: post_admin.php");
                 }
       }
      ?>
@@ -351,42 +351,42 @@
             </div>
           </div>
         </div>
-<!-- // Modal add new category -->
-<!-- Modal Delete Category-->
-<div class="modal modal-danger fade in" id="DeleteCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- // Modal add new Post -->
+<!-- Modal Delete Post-->
+<div class="modal modal-danger fade in" id="DeletePost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
           <?php 
-              if (isset($_POST['delete_category_id_btn'])) {
-                $delete_category_id_input = $_POST['category_id_delete'];
-                $sql_delete_category_id = "DELETE FROM  categories WHERE id ={$delete_category_id_input}";
-                $result_sql_delete_category_id = mysqli_query($dbconnection, $sql_delete_category_id);
-                header("Location: category_admin.php");
+              if (isset($_POST['delete_post_id_btn'])) {
+                $delete_post_id_input = $_POST['post_id_delete'];
+                $sql_delete_post_id = "DELETE FROM  posts WHERE id ={$delete_post_id_input}";
+                $result_sql_delete_post_id = mysqli_query($dbconnection, $sql_delete_post_id);
+                header("Location: post_admin.php");
               }
            ?>
     <div class="modal-content">
       <form method="post" action="">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" align="center">Delete category</h5>
+        <h5 class="modal-title" id="exampleModalLabel" align="center">Delete post</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-            <input type="hidden" class="form-control" id="category_id_delete" name="category_id_delete">
+            <input type="hidden" class="form-control" id="post_id_delete" name="post_id_delete">
             <p align="center"><img src="admin-template/images/delete.png" width="25" align="middle">
-            Are you sure you want to delete this category?</p>
+            Are you sure you want to delete this post?</p>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-name"></span>Close</button>
-        <button type="submit" name="delete_category_id_btn" class="btn btn-warning"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
+        <button type="submit" name="delete_post_id_btn" class="btn btn-warning"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
       </div>
       </form>
     </div>
   </div>
 </div>
-<!-- // Modal Delete Category-->
+<!-- // Modal Delete Post-->
     <!-- Modal EDIT  category -->
     <?php
       $current_date = date('d/m/Y');
