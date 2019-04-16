@@ -153,11 +153,21 @@
              <tbody id="myTable">
             <tr class="success">
               <td style="text-align: center;">
-                <input type="checkbox" class="form-check-input" id="selectOneCheckBoxArray" name="selectOneCheckBoxArray[]" value="<?php echo $view_category_id; ?>">
+                <input type="checkbox" class="form-check-input" id="selectOneCheckBoxArray" name="selectOneCheckBoxArray[]" value="<?php echo $view_post_id; ?>">
               </td>
               <td style="text-align: center;"><?php echo $view_post_title ?></td>
               <td style="text-align: center;"><?php echo $view_post_autor ?></td>
-              <td style="text-align: center;"><?php echo $view_post_category ?></td>
+              <?php 
+                    $sql_select_category_by_id = "SELECT * FROM category WHERE id ={$view_post_category}";
+                    $result_sql_select_category_by_id = mysqli_query($dbconnection, $sql_select_category_by_id);
+                     while ($rowcategory_by_id = mysqli_fetch_assoc($result_sql_select_category_by_id))
+                      {
+                        $view_category_id_by_id = $rowcategory_by_id['id'];
+                        $view_cat_title_by_id = $rowcategory_by_id['cat_title'];
+                        $view_cat_desc_by_id = $rowcategory_by_id['cat_desc'];
+                      } 
+              ?>
+              <td style="text-align: center;"><?php echo $view_cat_title_by_id ?></td>
               <td style="text-align: center;"><img  class="zoom" src="images/blog/<?php  echo $view_post_image; ?>" width="50"></td>
               <td style="text-align: center;"><?php echo $view_post_visit_counter ?></td>
               <?php 
@@ -221,9 +231,13 @@
         $add_post_date=$_POST['post_date'];
         $add_post_edit_date=$current_date;
         //$add_post_image=$_POST['post_image'];
-
-        $add_post_image = $_FILES["post_image"]["name"];
-        $add_post_image_temp = $_FILES["post_image"]["tmp_name"];
+        $image_extension = pathinfo($_FILES["post_image"]["name"], PATHINFO_EXTENSION);
+        if ($image_extension=='jpg' || $image_extension=='jpeg' || $image_extension=='png' || $image_extension=='gif') 
+        {
+          $add_post_image = $_FILES["post_image"]["name"];
+          $add_post_image_temp = $_FILES["post_image"]["tmp_name"];
+        }
+        
         if (empty($add_post_image))
         {
          $add_post_image="nophoto-default.jpg";
