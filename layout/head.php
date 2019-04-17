@@ -5,7 +5,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blog Home - Start Bootstrap Template</title>
+  <title>VirtuaPHP - Blog Home</title>
 
   <!-- Bootstrap core CSS -->
   <link href="blog-template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

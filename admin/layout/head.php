@@ -132,13 +132,25 @@
 }
  .zoom
   {
-    
+    border-radius: 50%;
     transition: all 0.5s;
   }
   .zoom:hover
   {
-    transform: scale(3.1);
+    transform: scale(5.1);
     box-shadow: 4px 4px 1px #888888;
+    
+  }
+  .zoom3
+  {
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+  .zoom3:hover
+  {
+    transform: scale(2.1);
+    box-shadow: 4px 4px 1px #888888;
+    
   }
 </style>
 </head>

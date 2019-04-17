@@ -222,17 +222,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="admin-template/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="images\0.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Nedžad Mešić</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="admin-template/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="images\0.jpg" class="zoom3" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Nedžad Mešić - Web Developer
+                  <small>Since Nov. 2002</small>
                 </p>
               </li>
               <!-- Menu Body -->
