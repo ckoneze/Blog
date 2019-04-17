@@ -12,6 +12,7 @@
 
   <!-- Custom styles for this template -->
   <link href="blog-template/css/blog-home.css" rel="stylesheet">
+  <link href="css/blog-post.css" rel="stylesheet">
 <style>
 .zoom1 {
   padding: 50px;

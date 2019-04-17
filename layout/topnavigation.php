@@ -20,7 +20,7 @@
                   $view_cat_title = $rowcategory['cat_title'];
              ?>
           <li class="nav-item">
-            <a class="nav-link" href="#"><?php echo $view_cat_title; ?></a>
+            <a class="nav-link" href="category.php?catid=<?= $view_category_id; ?>"><?php echo $view_cat_title; ?></a>
           </li>
           <?php  
                 }

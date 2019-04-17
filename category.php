@@ -18,12 +18,26 @@
 
       <!-- Blog Entries Column -->
       <div class="col-md-8">
+        <?php 
+        if (isset($_GET['catid'])) 
+        {
+          $selected_category_page= $_GET['catid'];
+          $sql_select_category_page = "SELECT * FROM categories WHERE id = {$selected_category_page}";
+          $result_sql_select_category_page = mysqli_query($dbconnection, $sql_select_category_page);
+                while ($rowcategorypage = mysqli_fetch_assoc($result_sql_select_category_page))
+                {
+                  $view_category_id = $rowcategorypage['id'];
+                  $view_cat_title = $rowcategorypage['cat_title'];
+                }
+        }
 
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
+         ?>
+
+        <h1 class="my-4"><?php echo $view_cat_title; ?>
+          <!-- <small>Secondary Text</small>-->
         </h1>
         <?php 
-                $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 ORDER BY id desc";
+                $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 AND post_category = {$selected_category_page} ORDER BY id desc";
                 $result_sql_select_post = mysqli_query($dbconnection, $sql_select_post);
                 while ($rowpost = mysqli_fetch_assoc($result_sql_select_post))
                 {
@@ -49,7 +63,7 @@
               <?php //echo $view_post_text; 
               echo substr($view_post_text, 0, 400) . "...";?>
             </p>
-            <a href="post.php?postid=<?= $view_post_id; ?>" class="btn btn-primary">Read More &rarr;</a>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             <img src="admin\images\0.jpg" class="zoom3" alt="User Image" width="50" align="left" hspace="5">

@@ -149,7 +149,16 @@
               <td style="text-align: center;"><?php echo $view_cat_title ?></td>
               <td style="text-align: center;"><?php echo $view_cat_desc ?></td>
               <td style="text-align: center;"><?php echo $view_cat_slug ?></td>
-              <td style="text-align: center;">55</td>
+              <?php 
+                $posts_category_counter= 0;
+                $sql_select_category_posts = "SELECT * FROM posts WHERE post_category={$view_category_id}";
+                $result_sql_selectcategory_posts = mysqli_query($dbconnection, $sql_select_category_posts);
+                while ($rowcategorypost = mysqli_fetch_assoc($result_sql_selectcategory_posts))
+                {
+                  $posts_category_counter++;
+                } 
+             ?>
+              <td style="text-align: center;"><?php echo $posts_category_counter; ?></td>
               <?php 
                 if ($view_cat_status==1)
                 {
@@ -200,192 +209,13 @@
     </section>
     <!-- /.content -->
      <!-- Modal add new category -->
-    <?php
-      $current_date = date('d/m/Y');
-      if (isset($_POST['save_category']))
-      {
-        $add_cat_title=$_POST['cat_title'];
-        $add_cat_desc=$_POST['cat_desc'];
-        $add_cat_slug=$_POST['cat_slug'];
-        $add_cat_date=$_POST['cat_date'];
-        $add_cat_edit_date=$_POST['cat_edit_date'];
-        $add_cat_status=$_POST['cat_status'];
-        $add_cat_priority=$_POST['cat_priority'];
-
-        $add_cat_title = mysqli_real_escape_string($dbconnection, $add_cat_title);
-        $add_cat_desc = mysqli_real_escape_string($dbconnection, $add_cat_desc);
-        $add_cat_slug = mysqli_real_escape_string($dbconnection, $add_cat_slug);
-        $add_cat_status = mysqli_real_escape_string($dbconnection, $add_cat_status);
-
-        $sql_add_category = "INSERT INTO categories(cat_title,cat_desc, cat_slug, cat_date, cat_edit_date, cat_status, cat_priority) VALUES('$add_cat_title', '$add_cat_desc', '$add_cat_slug', '$current_date', '$current_date', '$add_cat_status', '$add_cat_priority')";
-        $result_sql_add_category= mysqli_query($dbconnection, $sql_add_category);
-        if (!$result_sql_add_category)
-                {
-                  die("Error description:" . mysqli_error());
-                }
-                else
-                {
-                  echo "Data added successfully";
-        header("Location: category_admin.php");
-                }
-      }
-     ?>
-      <!--
-        <div class="modal fade" id="InsertCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      --> 
-        <div class="modal fade" id="InsertCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header modal-header-add">
-                <h4 class="modal-title" id="exampleModalLongTitle" align="center"><i class="fa fa-server"></i> Add new category</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form method="post" action="">
-                <div class="form-group">
-                  <label for="cat_title" class="col-form-label">Title:</label>
-                  <input type="text" class="form-control" id="cat_title" name="cat_title" placeholder="Enter Title Here" required="">
-                </div>
-                <div class="form-group">
-                  <label for="cat_desc" class="col-form-label">Description:</label>
-                  <input type="text" class="form-control" id="cat_desc" name="cat_desc" placeholder="Enter Description Here" required="">
-                </div>
-                <div class="form-group">
-                  <label for="cat_slug" class="col-form-label">Slug:</label>
-                  <input type="text" class="form-control" id="cat_slug" name="cat_slug" placeholder="Enter Slug Here" required="">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="cat_status" class="col-form-label" >Status:</label><br>
-                    <input type="radio" name="cat_status" id="cat_status" value="1" checked=""> Publish
-                    <input type="radio" name="cat_status" id="cat_status" value="0"> Draft
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="cat_priority" class="col-form-label">Category priority:</label>
-                  <input type="text" class="form-control" id="cat_priority" name="cat_priority" placeholder="Enter category priority number 0-9" required="">
-                </div>
-              </div>
-              <br><br><br>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" name="save_category"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-<!-- // Modal add new category -->
-<!-- Modal Delete Category-->
-<div class="modal modal-danger fade in" id="DeleteCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-          <?php 
-              if (isset($_POST['delete_category_id_btn'])) {
-                $delete_category_id_input = $_POST['category_id_delete'];
-                $sql_delete_category_id = "DELETE FROM  categories WHERE id ={$delete_category_id_input}";
-                $result_sql_delete_category_id = mysqli_query($dbconnection, $sql_delete_category_id);
-                header("Location: category_admin.php");
-              }
-           ?>
-    <div class="modal-content">
-      <form method="post" action="">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" align="center">Delete category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-            <input type="hidden" class="form-control" id="category_id_delete" name="category_id_delete">
-            <p align="center"><img src="admin-template/images/delete.png" width="25" align="middle">
-            Are you sure you want to delete this category?</p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-name"></span>Close</button>
-        <button type="submit" name="delete_category_id_btn" class="btn btn-warning"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- // Modal Delete Category-->
+      <?php include "layout/modal/add_new_category.php" ?>
+     <!-- // Modal add new category -->
+    <!-- Modal Delete Category-->
+      <?php include "layout/modal/delete_category.php" ?>
+    <!-- // Modal Delete Category-->
     <!-- Modal EDIT  category -->
-    <?php
-      $current_date = date('d/m/Y');
-      if (isset($_POST['edit_category']))
-      {
-        $edit_cat_id=$_POST['cat_id_edit'];
-        $edit_cat_title=$_POST['cat_title_edit'];
-        $edit_cat_desc=$_POST['cat_desc_edit'];
-        $edit_cat_slug=$_POST['cat_slug_edit'];
-        $edit_cat_date=$_POST['cat_date_edit'];
-        $edit_cat_edit_date=$_POST['cat_edit_date_edit'];
-        $edit_cat_status=$_POST['cat_status_edit'];
-        $edit_cat_priority=$_POST['cat_priority_edit'];
-
-        $sql_edit_category = "UPDATE categories SET cat_title='$edit_cat_title', cat_desc='$edit_cat_desc', cat_slug='$edit_cat_slug',cat_date='$edit_cat_date',cat_edit_date='$current_date', cat_status='$edit_cat_status',cat_priority='$edit_cat_priority'  WHERE id={$edit_cat_id}";
-        $result_sql_add_category= mysqli_query($dbconnection, $sql_edit_category);
-        if (!$result_sql_add_category)
-                {
-                  die("Niste snimili u bazu" . mysqli_error());
-                }
-                else
-                {
-                  echo "Uspiješno snimljeno";
-        header("Location: category_admin.php");
-                }
-      }
-     ?>
-
-        <div class="modal fade" id="EditCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header modal-header-warning">
-                <h4 class="modal-title" id="exampleModalLongTitle" align="center">Edit category</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form method="post" action="">
-                  <div class="form-group">
-                  <input type="hidden" class="form-control" id="cat_id_edit" name="cat_id_edit">
-                </div>
-                <div class="form-group">
-                  <label for="cat_title_edit" class="col-form-label">Title:</label>
-                  <input type="text" class="form-control" id="cat_title_edit" name="cat_title_edit" placeholder="Enter Title Here" required="">
-                </div>
-                <div class="form-group">
-                  <label for="cat_desc_edit" class="col-form-label">Description:</label>
-                  <input type="text" class="form-control" id="cat_desc_edit" name="cat_desc_edit" placeholder="Enter Description Here" required="">
-                </div>
-                <div class="form-group">
-                  <label for="cat_slug_edit" class="col-form-label">Slug:</label>
-                  <input type="text" class="form-control" id="cat_slug_edit" name="cat_slug_edit" placeholder="Enter Slug Here" required="">
-                </div>
-                <div class="col-sm-4">
-                    <label for="cat_status_edit" class="col-form-label" >Status:</label><br>
-                    <input type="radio" name="cat_status_edit" id="cat_status_edit" value="1" checked=""> Publish
-                    <input type="radio" name="cat_status_edit" id="cat_status_edit" value="0"> Draft
-                  </div>
-                  <div class="form-group col-md-6">
-                  <label for="cat_priority" class="col-form-label">Category priority:</label>
-                  <input type="text" class="form-control" id="cat_priority_edit" name="cat_priority_edit" placeholder="Enter category priority number 0-9" required="">
-
-                  <input type="text" class="form-control" id="cat_date_edit" name="cat_date_edit" required="">
-                </div>
-              </div>
-              <br><br><br>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" name="edit_category"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    <?php include "layout/modal/edit_category.php" ?>
 <!-- // Modal EDIT  category -->
   </div>
   <!-- /.content-wrapper -->
