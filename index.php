@@ -45,12 +45,16 @@
           <img class="card-img-top" src="admin/images/blog/<?php  echo $view_post_image; ?>" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title"><?php echo $view_post_title; ?></h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <p class="card-text">
+              <?php //echo $view_post_text; 
+              echo substr($view_post_text, 0, 400) . "...";?>
+            </p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-            Posted on <?php echo $view_post_date; ?> by
-            <a href="#"><?php echo $view_post_autor; ?></a>
+            <img src="admin\images\0.jpg" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
+            By <a href="#"><?php echo $view_post_autor; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
+            | <?php echo $view_post_date; ?>
           </div>
         </div>
       <?php } ?>
