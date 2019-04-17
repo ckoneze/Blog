@@ -187,7 +187,7 @@
               <td style="text-align: center;"><span class="label label-success">23584</span></td>
               <td style="text-align: center;">
 
-                <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditPost" data-post_id_edit="<?= $view_post_id ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+                <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditPost" data-post_id_edit="<?= $view_post_id ?>" data-post_category_edit="<?= $view_post_category ?>" data-post_title_edit="<?= $view_post_title ?>" data-post_autor_edit="<?= $view_post_autor ?>" data-post_date_edit="<?= $view_post_date ?>" data-post_edit_date_edit="<?= $view_post_edit_date ?>" data-post_image_edit="<?= $view_post_image ?>" data-post_text_edit="<?= $view_post_text ?>" data-post_tag_edit="<?= $view_post_tag ?>" data-post_visit_counter_edit="<?= $view_post_visit_counter ?>" data-post_status_edit="<?= $view_post_status ?>" data-post_priority_edit="<?= $view_post_priority ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
 
                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeletePost" data-post_id_delete="<?= $view_post_id ?>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
               </td>
@@ -398,7 +398,15 @@
         $edit_post_autor=$_POST['post_autor_edit'];
         $edit_post_date=$_POST['post_date_edit'];
         $edit_post_edit_date=$_POST['post_edit_date_edit'];
-        $edit_post_image=$_POST['post_image_edit'];
+        //$edit_post_image=$_POST['post_image_edit'];
+        $new_post_image = $_FILES["new_post_image"]["name"];
+        $new_post_image_temp = $_FILES["new_post_image"]["tmp_name"];
+        move_uploaded_file($new_post_image_temp,"images/blog/$new_post_image");
+        if (empty($new_post_image))
+        {
+         $new_post_image=$_POST['post_image_edit1'];
+        }
+
         $edit_post_text=$_POST['post_text_edit'];
         $edit_post_tag=$_POST['post_tag_edit'];
         $edit_post_visit_counter=$_POST['post_visit_counter_edit'];
@@ -406,7 +414,7 @@
         $edit_post_priority=$_POST['post_priority_edit'];
 
 
-        $sql_edit_post = "UPDATE posts SET post_category='$edit_post_category', post_title='$edit_post_title', post_autor='$edit_post_autor',post_date='$edit_post_date',post_edit_date='$current_date', post_image='$edit_post_image',post_text='$edit_post_text', post_tag='$edit_post_tag', post_visit_counter='$edit_post_visit_counter', post_status='$edit_post_status', post_priority = '$edit_post_priority'  WHERE id={$edit_post_id}";
+        $sql_edit_post = "UPDATE posts SET post_category='$edit_post_category', post_title='$edit_post_title', post_autor='$edit_post_autor',post_date='$edit_post_date',post_edit_date='$current_date', post_image='$new_post_image',post_text='$edit_post_text', post_tag='$edit_post_tag', post_visit_counter='$edit_post_visit_counter', post_status='$edit_post_status', post_priority = '$edit_post_priority'  WHERE id={$edit_post_id}";
         $result_sql_edit_post= mysqli_query($dbconnection, $sql_edit_post);
         if (!$result_sql_edit_post)
                 {
@@ -415,7 +423,7 @@
                 else
                 {
                   echo "Data added successfully";
-                  header("Location: category_admin.php");
+                  header("Location: post_admin.php");
                 }
       }
      ?>
@@ -430,7 +438,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="post" action="">
+                <form method="post" action="" enctype="multipart/form-data">
                   <div class="form-group">
                   <input type="hidden" class="form-control" id="post_id_edit" name="post_id_edit">
                 </div>
@@ -461,14 +469,13 @@
                       <label for="post_autor_edit" class="col-form-label">Autor:</label>
                       <input type="text" class="form-control" id="post_autor_edit" name="post_autor_edit">
                     </div>
-                    <div class="col-sm-4">
-                      <label for="post_date" class="col-form-label">Date:</label>
-                      <input type="text" class="form-control" id="post_date_edit" name="post_date_edit" required>
-                    </div>
-                  </div>
+                    
+                  </div><br>
                   <div class="form-group">
-                      <label for="post_imagel" class="col-form-label">Image:</label>
-                      <input type="file" name="post_image_edit" id="post_image_edit">
+                    <input type="hidden" name="post_image_edit1" id="post_image_edit1">
+                      <label for="post_imagel" class="col-form-label">Curent post image:</label>
+                      <img  class="zoom" src="images/blog/<?php  echo $view_post_image; ?>" width="80"><br>
+                      <input type="file" name="new_post_image" id="new_post_image">
                   </div>
                   <div class="form-group shadow-textarea">
                     <label for="post_text_edit" class="col-form-label">Text:</label>

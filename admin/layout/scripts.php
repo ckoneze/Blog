@@ -81,6 +81,39 @@ $('#DeletePost').on('show.bs.modal', function (event) {
 
  // modal.find('.modal-body ozakadrzave').val(ozakadrzave)
 })
+
+$('#EditPost').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget)
+  var id = button.data('post_id_edit')
+  var category = button.data('post_category_edit')
+  var title = button.data('post_title_edit')
+  var autor = button.data('post_autor_edit')
+  var date = button.data('post_date_edit')
+  var editdate = button.data('post_edit_date_edit')
+  var image = button.data('post_image_edit')
+  var text = button.data('post_text_edit')
+  var tag = button.data('post_tag_edit')
+  var visit = button.data('post_visit_counter_edit')
+  var status = button.data('post_status_edit')
+  var priority = button.data('post_priority_edit')
+      
+  var modal = $(this)
+  modal.find('.modal-body #post_id_edit').val(id);
+  modal.find('.modal-body #post_category_edit').val(category);
+  modal.find('.modal-body #post_title_edit').val(title);
+  modal.find('.modal-body #post_autor_edit').val(autor);
+  modal.find('.modal-body #post_date_edit').val(date);
+  modal.find('.modal-body #post_edit_date_edit').val(editdate);
+  modal.find('.modal-body #post_image_edit1').val(image);
+  modal.find('.modal-body #post_text_edit').val(text);
+  modal.find('.modal-body #post_tag_edit').val(tag);
+  modal.find('.modal-body #post_visit_counter_edit').val(visit);
+  modal.find('.modal-body #post_status_edit').val(status);
+  modal.find('.modal-body #post_priority_edit').val(priority);
+
+   CKEDITOR.instances['post_text_edit'].setData(text)
+
+})
 </script>
 
 <script>
