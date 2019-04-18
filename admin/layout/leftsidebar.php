@@ -35,7 +35,7 @@
           <ul class="treeview-menu">
             <li><a href="category_admin.php"><i class="fa fa-server"></i></i> Category</a></li>
             <li><a href="post_admin.php"><i class="fa fa-file"></i> Post</a></li>
-            <li><a href="../admin-template/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="users_admin.php"><i class="fa fa-users"></i> Users</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -50,7 +50,7 @@
             <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
             <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
             <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-users" aria-hidden="true"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
         <li>
