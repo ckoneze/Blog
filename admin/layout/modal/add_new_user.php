@@ -38,43 +38,48 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="post" action="">
-                <div class="form-group col-md-6">
+                <form method="post" action="" data-toggle="validator" role="form">
+                <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Name:</label>
                   <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Enter Name Here" required="">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Username:</label>
                   <input type="text" class="form-control" id="user_username" name="user_username" placeholder="Enter Username Here" required="">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Email:</label>
-                  <input type="text" class="form-control" id="user_email" name="user_email" placeholder="Enter Email Here" required="">
+                  <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Enter Email Here" data-error="Bruh, that email address is invalid" required="">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
+                  <label for="user_type" class="col-form-label">User type:</label>
+                      <select class="form-control" id="user_type" name="user_type">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="0" >User</option>
+                    <option value="1">Administrator</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="user_password" class="col-form-label"> Confirm Password:</label>
+                  <input type="password" data-minlength="6" class="form-control" name="user_password" id="user_password" placeholder="Enter Password Here" required="">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="user_password_reapet" class="col-form-label"> Password:</label>
+                  <input type="password" data-minlength="6" class="form-control" name="inputPasswordConfirm" id="inputPasswordConfirm" data-match="#user_password" data-match-error="Whoops, these don't match" placeholder="Confirm password" required><div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group col-md-4">
+                      <label for="post_imagel" class="col-form-label">Image:</label>
+                      <input type="file" name="post_image" id="post_image">
+                </div>
+                <div class="form-group col-md-8">
                   <label for="cat_title" class="col-form-label"> Gender:</label><br>
-                  <label><input type="radio" name="optradio" checked>Option 1</label>
-                  <label><input type="radio" name="optradio" checked>Option 1</label>
+                  <label><input type="radio" name="user_gender" id="user_gender" value="1" checked> <i class="fa fa-female" aria-hidden="true"></i></label>
+                  <label><input type="radio" name="user_gender" id="user_gender" value="2"> <i class="fa fa-male" aria-hidden="true"></i></label>
                 </div>
-                <div class="form-group">
-                  <label for="cat_desc" class="col-form-label">Description:</label>
-                  <input type="text" class="form-control" id="cat_desc" name="cat_desc" placeholder="Enter Description Here" required="">
-                </div>
-                <div class="form-group">
-                  <label for="cat_slug" class="col-form-label">Slug:</label>
-                  <input type="text" class="form-control" id="cat_slug" name="cat_slug" placeholder="Enter Slug Here" required="">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="cat_status" class="col-form-label" >Status:</label><br>
-                    <input type="radio" name="cat_status" id="cat_status" value="1" checked=""> Publish
-                    <input type="radio" name="cat_status" id="cat_status" value="0"> Draft
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="cat_priority" class="col-form-label">Category priority:</label>
-                  <input type="text" class="form-control" id="cat_priority" name="cat_priority" placeholder="Enter category priority number 0-9" required="">
-                </div>
+                
+                
               </div>
-              <br><br><br>
+              <br>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary" name="save_user"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
