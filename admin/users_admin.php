@@ -35,22 +35,22 @@
              if (isset($_POST['selectOneCheckBoxArray']))
              {
                  //header("Location: index.php");
-               foreach ($_POST['selectOneCheckBoxArray'] as $checked_Box_Category_Id)
+               foreach ($_POST['selectOneCheckBoxArray'] as $checked_Box_User_Id)
                {
                 $group_options = $_POST['group_options'];
                 switch ($group_options) {
                   case '1':
-                    $sql_group_publish = "UPDATE categories SET cat_status= '{$group_options}' WHERE id={$checked_Box_Category_Id}";
+                    $sql_group_publish = "UPDATE users SET status= '{$group_options}' WHERE id={$checked_Box_User_Id}";
                      $result_sql_group_publish= mysqli_query($dbconnection, $sql_group_publish);
                     break;
                   case '0':
-                    $sql_group_unpublish = "UPDATE categories SET cat_status= '{$group_options}' WHERE id={$checked_Box_Category_Id}";
+                    $sql_group_unpublish = "UPDATE users SET status= '{$group_options}' WHERE id={$checked_Box_User_Id}";
                      $result_sql_group_unpublish= mysqli_query($dbconnection, $sql_group_unpublish);
                     break;
                   case 'delete':
-                  $sql_group_delete = "DELETE FROM categories WHERE id ={$checked_Box_Category_Id}";
+                  $sql_group_delete = "DELETE FROM users WHERE id ={$checked_Box_User_Id}";
                   $result_sql_group_delete = mysqli_query($dbconnection, $sql_group_delete);
-                  header("Location: category_admin.php");
+                  header("Location: users_admin.php");
                     # code...
                     break;
                   
@@ -59,13 +59,13 @@
                     break;
                 }
                }
-               header("Location: category_admin.php");
+               header("Location: users_admin.php");
              }
 
               ?>
 
           
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InsertCategory"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new user / admin</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InsertUser"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new user / admin</button>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">
@@ -85,7 +85,7 @@
                     <option value="delete" >Delete</option>
                     <option value="1">Publish</option>
                     <option value="0">Unpublish</option>
-            </select>
+                  </select>
                </th>
                <th>&nbsp;</th>
                <th>
@@ -144,7 +144,7 @@
              <tbody id="myTable">
             <tr class="success">
               <td style="text-align: center;">
-                <input type="checkbox" class="form-check-input" id="selectOneCheckBoxArray" name="selectOneCheckBoxArray[]" value="<?php echo $view_category_id; ?>">
+                <input type="checkbox" class="form-check-input" id="selectOneCheckBoxArray" name="selectOneCheckBoxArray[]" value="<?php echo $view_users_id; ?>">
               </td>
               <td style="text-align: center;"><?php echo $view_users_name ?></td>
               <td style="text-align: center;"><?php echo $view_users_username ?></td>
@@ -201,7 +201,7 @@
     </section>
     <!-- /.content -->
      <!-- Modal add new category -->
-      <?php include "layout/modal/add_new_category.php" ?>
+      <?php include "layout/modal/add_new_user.php" ?>
      <!-- // Modal add new category -->
     <!-- Modal Delete Category-->
       <?php include "layout/modal/delete_category.php" ?>
