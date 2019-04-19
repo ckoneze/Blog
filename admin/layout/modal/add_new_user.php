@@ -7,7 +7,21 @@
         $add_user_email=$_POST['user_email'];
         $add_user_password=$_POST['user_password'];
         $add_user_gender=$_POST['user_gender'];
-        $add_user_image=$_POST['user_image'];
+        //$add_user_image=$_POST['user_image'];
+
+        $image_extension = pathinfo($_FILES["user_image"]["name"], PATHINFO_EXTENSION);
+        if ($image_extension=='jpg' || $image_extension=='jpeg' || $image_extension=='png' || $image_extension=='gif') 
+        {
+          $add_user_image = $_FILES["user_image"]["name"];
+          $add_user_image_temp = $_FILES["user_image"]["tmp_name"];
+        }
+        
+        if (empty($add_user_image))
+        {
+         $add_user_image="nophoto-default.jpg";
+        }
+         move_uploaded_file($add_user_image_temp,"images/users/$add_user_image");
+
         $add_user_code=$_POST['user_code'];
         $add_user_status=$_POST['user_status'];
         $add_user_type=$_POST['user_type'];
@@ -21,7 +35,7 @@
                 else
                 {
                   echo "Data added successfully";
-        header("Location: users_admin.php");
+                  header("Location: users_admin.php");
                 }
       }
      ?>
@@ -38,7 +52,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="post" action="" data-toggle="validator" role="form">
+                <form method="post" action="" enctype="multipart/form-data">
                 <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Name:</label>
                   <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Enter Name Here" required="">
@@ -52,7 +66,7 @@
                   <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Enter Email Here" data-error="Bruh, that email address is invalid" required="">
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="user_type" class="col-form-label">User type:</label>
+                  <label for="user_type" class="col-form-label"> User type:</label>
                       <select class="form-control" id="user_type" name="user_type">
                     <option value="" disabled selected>Select...</option>
                     <option value="0" >User</option>
@@ -68,15 +82,19 @@
                   <input type="password" data-minlength="6" class="form-control" name="inputPasswordConfirm" id="inputPasswordConfirm" data-match="#user_password" data-match-error="Whoops, these don't match" placeholder="Confirm password" required><div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group col-md-4">
-                      <label for="post_imagel" class="col-form-label">Image:</label>
-                      <input type="file" name="post_image" id="post_image">
+                      <label for="user_imagel" class="col-form-label">Image:</label>
+                      <input type="file" name="user_image" id="user_image">
                 </div>
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Gender:</label><br>
                   <label><input type="radio" name="user_gender" id="user_gender" value="1" checked> <i class="fa fa-female" aria-hidden="true"></i></label>
                   <label><input type="radio" name="user_gender" id="user_gender" value="2"> <i class="fa fa-male" aria-hidden="true"></i></label>
                 </div>
-                
+                <div class="form-group col-md-4">
+                    <label for="user_status" class="col-form-label" > Status:</label><br>
+                    <input type="radio" name="user_status" id="user_status" value="1" checked=""> Active
+                    <input type="radio" name="user_status" id="user_status" value="0"> Pending
+                </div>
                 
               </div>
               <br>
