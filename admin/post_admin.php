@@ -119,7 +119,7 @@
                 <input type="checkbox" class="form-check-input" id="selectAllCategoryCheckbox" name="selectAllCategoryCheckbox">
               </th>
               <th style="text-align: center;">Title</th>
-              <th style="text-align: center;">Autor</th>
+              <th style="text-align: center;">Author</th>
               <th style="text-align: center;">Category</th>
               <th style="text-align: center;">Image</th>
               <th style="text-align: center;"><i class="fa far fa-eye" aria-hidden="true"></i></th>

@@ -47,7 +47,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" onmousemove="myFunction()">
                 <form method="post" action="" enctype="multipart/form-data">
                   <div class="form-group">
                   <input type="hidden" class="form-control" id="post_id_edit" name="post_id_edit">
@@ -82,10 +82,21 @@
                     
                   </div><br>
                   <div class="form-group">
-                    <input type="hidden" name="post_image_edit1" id="post_image_edit1">
-                      <label for="post_imagel" class="col-form-label">Curent post image:</label>
-                      <img  class="zoom" src="images/blog/<?php  echo $view_post_image; ?>" width="80"><br>
+                    <input type="text" name="post_image_edit1" id="post_image_edit1">
+                    <script>
+function myFunction() {
+  var slikuca = document.getElementById("post_image_edit1").value;  
+  alert(slikuca);
+
+}
+</script>
+                    <?php 
+                       $slikica = $_GET['slikuca'];
+                     ?>
+                     <label for="post_imagel" class="col-form-label">Curent post image:</label>
+                      <img  class="zoom" src="images/blog/<?php  echo $slikica; ?>" width="80"><br>
                       <input type="file" name="new_post_image" id="new_post_image">
+
                   </div>
                   <div class="form-group shadow-textarea">
                     <label for="post_text_edit" class="col-form-label">Text:</label>
@@ -111,7 +122,7 @@
                   <div class="col-sm-4">
                     <label for="post_priority_edit" class="col-form-label">Priority:</label>
                     <input type="text" class="form-control" id="post_priority_edit" name="post_priority_edit">
-                    <input type="text" name="post_date_edit" id="post_date_edit">
+                    <input type="hidden" name="post_date_edit" id="post_date_edit">
                   </div>
                 </div>
                 
