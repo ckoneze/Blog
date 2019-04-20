@@ -85,13 +85,13 @@
                     <input type="text" name="post_image_edit1" id="post_image_edit1">
                     <script>
 function myFunction() {
-  var slikuca = document.getElementById("post_image_edit1").value;  
+  var slikuca1 = document.getElementById("post_image_edit1").value;  
   alert(slikuca);
 
 }
 </script>
                     <?php 
-                       $slikica = $_GET['slikuca'];
+                       $slikica = $_GET['slikuca1'];
                      ?>
                      <label for="post_imagel" class="col-form-label">Curent post image:</label>
                       <img  class="zoom" src="images/blog/<?php  echo $slikica; ?>" width="80"><br>

@@ -110,6 +110,7 @@ $('#EditPost').on('show.bs.modal', function (event) {
   modal.find('.modal-body #post_visit_counter_edit').val(visit);
   modal.find('.modal-body #post_status_edit').val(status);
   modal.find('.modal-body #post_priority_edit').val(priority);
+  var slikuca1 = document.getElementById("post_image_edit1").value; 
 
    CKEDITOR.instances['post_text_edit'].setData(text)
 
