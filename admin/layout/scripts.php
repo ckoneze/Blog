@@ -96,6 +96,7 @@ $('#EditPost').on('show.bs.modal', function (event) {
   var visit = button.data('post_visit_counter_edit')
   var status = button.data('post_status_edit')
   var priority = button.data('post_priority_edit')
+
       
   var modal = $(this)
   modal.find('.modal-body #post_id_edit').val(id);
@@ -110,7 +111,11 @@ $('#EditPost').on('show.bs.modal', function (event) {
   modal.find('.modal-body #post_visit_counter_edit').val(visit);
   modal.find('.modal-body #post_status_edit').val(status);
   modal.find('.modal-body #post_priority_edit').val(priority);
-  var slikuca1 = document.getElementById("post_image_edit1").value; 
+  var slikazaprikaz = document.getElementById("post_image_edit1").value; 
+  //document.getElementById('foo').innerHTML = '<img src="images/blog" + image/>';
+//document.getElementById('foo').innerHTML = '<img src="img/apple_' + image 'id="imageBox"/>';
+
+mouseOver(this); //LOAD IMAGE
 
    CKEDITOR.instances['post_text_edit'].setData(text)
 

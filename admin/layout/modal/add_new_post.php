@@ -57,8 +57,13 @@
                 <form method="post" action="" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="post_title" class="col-form-label">Title:</label>
-                  <input type="text" class="form-control" id="post_title" name="post_title" placeholder="Enter Title Here" required="">
+                  <input type="text" class="form-control" id="post_title" name="post_title" placeholder="Enter Title Here" onmouseover="myFunction()" required="">
                 </div>
+                <script>
+function myFunction() {
+  alert("Hello! I am an alert box!");
+}
+</script>
                 <div class="row">
                     <div class="col-sm-4">
                       <label for="category_id" class="col-form-label">Category:</label>
@@ -89,7 +94,7 @@
                   </div>
                   <div class="form-group">
                       <label for="post_imagel" class="col-form-label">Image:</label>
-                      <input type="file" name="post_image" id="post_image">
+                      <input type="file" name="post_image" id="post_image" accept="image/*">
                   </div>
                   <div class="form-group shadow-textarea">
                     <label for="post_text" class="col-form-label">Text:</label>

@@ -47,7 +47,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body" onmousemove="myFunction()">
+              <div class="modal-body" id="demo" onmouseover="mouseOver(this)">
                 <form method="post" action="" enctype="multipart/form-data">
                   <div class="form-group">
                   <input type="hidden" class="form-control" id="post_id_edit" name="post_id_edit">
@@ -81,20 +81,31 @@
                     </div>
                     
                   </div><br>
-                  <div class="form-group">
-                    <input type="text" name="post_image_edit1" id="post_image_edit1">
-                    <script>
-function myFunction() {
-  var slikuca1 = document.getElementById("post_image_edit1").value;  
-  alert(slikuca);
+                  <div class="form-group" id="foo">
+                    <input type="hidden" name="post_image_edit1" id="post_image_edit1">
+                    
+ <script>
+function mouseOver() {
+   var image = document.getElementById('image');
+   var slikazaprikaz = document.getElementById("post_image_edit1").value; 
+   var putanja = 'images/blog/';
+   image.setAttribute('src', putanja + slikazaprikaz);
+   //alert(slikazaprikaz);
 
 }
+//function bigImg() {
+  // var image = document.getElementById('image');
+   //image.setAttribute('src', 'images/blog/nophoto-default1.jpg');
+//}
 </script>
+    
+    
                     <?php 
-                       $slikica = $_GET['slikuca1'];
+                       //$slikica = $_GET['slikuca1'];
                      ?>
-                     <label for="post_imagel" class="col-form-label">Curent post image:</label>
-                      <img  class="zoom" src="images/blog/<?php  echo $slikica; ?>" width="80"><br>
+                     
+                     <img src="" id="image" name="image" width="150">
+                    <br><br>
                       <input type="file" name="new_post_image" id="new_post_image">
 
                   </div>

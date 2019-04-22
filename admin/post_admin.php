@@ -65,7 +65,7 @@
               ?>
 
           
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InsertPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new post</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InsertPost"><span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="mouseOver(this)"></span> Add new post</button>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">
