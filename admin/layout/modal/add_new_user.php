@@ -52,7 +52,8 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="post" action="" enctype="multipart/form-data">
+                <form method="post" action="" enctype="multipart/form-data" oninput='up2.setCustomValidity(password.value != user_password.value ? "Passwords do not match." : "")'>
+ 
                 <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Name:</label>
                   <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Enter Name Here" required="">
