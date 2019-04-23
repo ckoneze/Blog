@@ -167,7 +167,7 @@
               <td style="text-align: center;"><?php echo $view_users_type ?></td>
               <td style="text-align: center;">
 
-                <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditCategory" data-category_id_edit="<?= $view_category_id ?>" data-category_title_edit="<?= $view_cat_title ?>" data-cat_desc_edit="<?= $view_cat_desc ?>" data-cat_slug_edit="<?= $view_cat_slug ?>" data-cat_priority_edit="<?= $view_cat_priority ?>" data-cat_date_edit="<?= $view_cat_date ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+                <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditUser" data-user_id_edit="<?= $view_users_id ?>" data-user_name_edit="<?= $view_users_name ?>" data-user_username_edit="<?= $view_users_username ?>" data-user_email_edit="<?= $view_users_email ?>" data-user_image_edit="<?= $view_users_image ?>" data-user_status_edit="<?= $view_users_status ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
 
                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteCategory" data-category_id_delete="<?= $view_category_id ?>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
               </td>
@@ -204,10 +204,10 @@
       <?php include "layout/modal/add_new_user.php" ?>
      <!-- // Modal add new category -->
     <!-- Modal Delete Category-->
-      <?php include "layout/modal/delete_category.php" ?>
+      <?php //include "layout/modal/delete_user.php" ?>
     <!-- // Modal Delete Category-->
     <!-- Modal EDIT  category -->
-    <?php include "layout/modal/edit_category.php" ?>
+    <?php include "layout/modal/edit_user.php" ?>
 <!-- // Modal EDIT  category -->
   </div>
   <!-- /.content-wrapper -->

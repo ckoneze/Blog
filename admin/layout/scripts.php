@@ -37,6 +37,25 @@
 <script src="admin-template/dist/js/demo.js"></script>
 
 <script>
+$('#EditUser').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget)
+  var id = button.data('user_id_edit')
+  var name = button.data('user_name_edit')
+  var username = button.data('user_username_edit')
+  var email = button.data('user_email_edit')
+  var image = button.data('user_image_edit')
+  var type = button.data('user_type_edit')
+    
+  var modal = $(this)
+  modal.find('.modal-body #user_id_edit').val(id);
+  modal.find('.modal-body #user_name_edit').val(name);
+  modal.find('.modal-body #user_username_edit').val(username);
+  modal.find('.modal-body #user_type_edit').val(type);
+
+})
+
+
+
 $('#EditCategory').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
   var id = button.data('category_id_edit')
@@ -120,6 +139,11 @@ mouseOver(this); //LOAD IMAGE
    CKEDITOR.instances['post_text_edit'].setData(text)
 
 })
+
+
+
+
+ 
 </script>
 
 <script>
@@ -136,3 +160,18 @@ mouseOver(this); //LOAD IMAGE
           }
       });
   </script>
+  <script>
+  var password = document.getElementById("user_password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>

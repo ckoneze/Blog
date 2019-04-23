@@ -1,4 +1,4 @@
 1.Testirati kategorije , postove
 2.Ugraditi DataTable
-3. kod edit posta prikazuje pogresnu sliku...svima isto prikazuje
-4.kod unosa useraverifikacija pasvorda
+3.kod unosa useraverifikacija pasvorda
+4.kod browse da idu samo slike

@@ -91,7 +91,6 @@ function mouseOver() {
    var putanja = 'images/blog/';
    image.setAttribute('src', putanja + slikazaprikaz);
    //alert(slikazaprikaz);
-
 }
 //function bigImg() {
   // var image = document.getElementById('image');
@@ -99,12 +98,8 @@ function mouseOver() {
 //}
 </script>
     
-    
-                    <?php 
-                       //$slikica = $_GET['slikuca1'];
-                     ?>
+                     <img  class="zoom" src="" id="image" name="image" width="50">
                      
-                     <img src="" id="image" name="image" width="150">
                     <br><br>
                       <input type="file" name="new_post_image" id="new_post_image">
 
