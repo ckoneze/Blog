@@ -58,11 +58,11 @@
                 <form method="post" action="" enctype="multipart/form-data">
  
                 <div class="form-group col-md-4">
-                  <input type="text" name="user_id_edit" id="user_id_edit">
+                  <input type="hidden" name="user_id_edit" id="user_id_edit">
                   <label for="cat_title" class="col-form-label"> Name:</label>
                   <input type="text" class="form-control" id="user_name_edit" name="user_name_edit" placeholder="Enter Name Here" required="">
                   
-                  <input type="text" name="user_image_edit" id="user_image_edit">
+                  <input type="hidden" name="user_image_edit" id="user_image_edit">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="cat_title" class="col-form-label"> Username:</label>
@@ -72,15 +72,9 @@
                   <label for="cat_title" class="col-form-label"> Email:</label>
                   <input type="email" class="form-control" id="user_email_edit" name="user_email_edit" placeholder="Enter Email Here" data-error="Bruh, that email address is invalid" required="">
                 </div>
-                <div class="form-group col-md-4">
-                  <label for="user_type" class="col-form-label"> User type:</label>
-                      <select class="form-control" id="user_type_edit_select" name="user_type_edit_select">
-                    <option value="" disabled selected>Select...</option>
-                    <option value="0" >User</option>
-                    <option value="1">Administrator</option>
-                  </select>
-                  <input type="text" name="user_type_edit" id="user_type_edit">
-                </div>
+                <div id="p1" class="form-group col-md-4"></div>
+
+                <input type="hidden" name="user_type_edit" id="user_type_edit">
                 <div class="form-group col-md-4">
                   <label for="user_password" class="col-form-label"> Password:</label>
                   <input type="password" data-minlength="6" class="form-control" name="user_password_edit" id="user_password_edit" placeholder="Enter Password Here" required="">
@@ -92,12 +86,10 @@
                 <div class="form-group col-md-4">
                       <label for="user_imagel" class="col-form-label">Image:</label>
                       <input type="file" name="user_image" id="user_image">
-                      <input type="text" name="user_code_edit" id="user_code_edit">
+                      <input type="hidden" name="user_code_edit" id="user_code_edit" placeholder="Code">
                 </div>
-                <div class="form-group col-md-4">
-                  <label for="cat_title" class="col-form-label"> Gender:</label><br>
-                  <label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1" checked> <i class="fa fa-female" aria-hidden="true"></i></label>
-                  <label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2"> <i class="fa fa-male" aria-hidden="true"></i></label>
+                <div class="form-group col-md-4" id="p2">
+                  
                 </div>
                 <div class="form-group col-md-4">
                     <label for="user_status" class="col-form-label" > Status:</label><br>
@@ -106,7 +98,7 @@
                 </div>
                 
               </div>
-              <div id="p1"></div><div id="p2"></div>
+              
               <br>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

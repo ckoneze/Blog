@@ -45,26 +45,48 @@ $('#EditUser').on('show.bs.modal', function (event) {
   var email = button.data('user_email_edit')
   var image = button.data('user_image_edit')
   var type = button.data('user_type_edit')
+  var gender = button.data('user_gender_edit')
+  var password = button.data('user_password_edit')
+  //var user_image = button.data('user_image_edit')
   //var type1 = button.data('user_type_edit_select')
   if(type == 0) {
-    document.getElementById("p1").innerHTML = '<select class="form-control" id="user_type_edit_select" name="user_type_edit_select">'+
+    document.getElementById("p1").innerHTML ='<label for="user_type" class="col-form-label"> User type:</label>'+
+                      '<select class="form-control" id="user_type_edit_select" name="user_type_edit_select">'+
                     '<option value="" disabled>Select...</option>'+
                     '<option value="0" selected>User</option>'+
                     '<option value="1">Administrator</option>'+
                   '</select>';
+
   } else {
-    document.getElementById("p2").innerHTML = '<select class="form-control" id="user_type_edit_select" name="user_type_edit_select">'+
+    document.getElementById("p1").innerHTML = '<label for="user_type" class="col-form-label"> User type:</label>'+
+                      '<select class="form-control" id="user_type_edit_select" name="user_type_edit_select">'+
                     '<option value="" disabled>Select...</option>'+
-                    '<option value="0">User</option>'+
+                    '<option value="0" >User</option>'+
                     '<option value="1" selected>Administrator</option>'+
                   '</select>';
+  }
+
+  if(gender == 1) {
+    document.getElementById("p2").innerHTML ='<label for="cat_title" class="col-form-label"> Gender:</label><br>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1" checked> <i class="fa fa-female"aria-hidden="true"></i></label>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2"> <i class="fa fa-male" aria-hidden="true"></i></label>';
+
+  } else {
+    document.getElementById("p2").innerHTML = '<label for="cat_title" class="col-form-label"> Gender:</label><br>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1"> <i class="fa fa-female"aria-hidden="true"></i></label>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2" checked> <i class="fa fa-male" aria-hidden="true"></i></label>';
   }
     
   var modal = $(this)
   modal.find('.modal-body #user_id_edit').val(id);
   modal.find('.modal-body #user_name_edit').val(name);
   modal.find('.modal-body #user_username_edit').val(username);
+  modal.find('.modal-body #user_email_edit').val(email);
   modal.find('.modal-body #user_type_edit').val(type);
+  modal.find('.modal-body #user_gender_edit').val(gender);
+  modal.find('.modal-body #user_password_edit').val(password);
+  modal.find('.modal-body #confirm_password').val(password);
+  modal.find('.modal-body #user_image_edit').val(image);
  //modal.find('.modal-body #t').val(type1);
 
 })
@@ -190,8 +212,4 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
-</script>
-
-<script>
-  type1
 </script>

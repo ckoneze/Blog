@@ -2,3 +2,4 @@
 2.Ugraditi DataTable
 3.kod unosa useraverifikacija pasvorda
 4.kod browse da idu samo slike
+5. provjeriti kako rade kategorije na postovima edit.. nije jasno kako sam napravio selcted record :)
