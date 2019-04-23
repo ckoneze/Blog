@@ -150,7 +150,7 @@
               <td style="text-align: center;"><?php echo $view_users_name ?></td>
               <td style="text-align: center;"><?php echo $view_users_username ?></td>
               <td style="text-align: center;"><?php echo $view_users_email ?></td>
-              <td style="text-align: center;"><?php echo $view_users_image; ?></td>
+              <td style="text-align: center;"><img  class="zoom" src="images/users/<?php  echo $view_users_image; ?>" width="50"></td>
               <?php 
                 if ($view_users_status==1)
                 {
