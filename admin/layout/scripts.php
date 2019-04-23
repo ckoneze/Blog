@@ -45,12 +45,27 @@ $('#EditUser').on('show.bs.modal', function (event) {
   var email = button.data('user_email_edit')
   var image = button.data('user_image_edit')
   var type = button.data('user_type_edit')
+  //var type1 = button.data('user_type_edit_select')
+  if(type == 0) {
+    document.getElementById("p1").innerHTML = '<select class="form-control" id="user_type_edit_select" name="user_type_edit_select">'+
+                    '<option value="" disabled>Select...</option>'+
+                    '<option value="0" selected>User</option>'+
+                    '<option value="1">Administrator</option>'+
+                  '</select>';
+  } else {
+    document.getElementById("p2").innerHTML = '<select class="form-control" id="user_type_edit_select" name="user_type_edit_select">'+
+                    '<option value="" disabled>Select...</option>'+
+                    '<option value="0">User</option>'+
+                    '<option value="1" selected>Administrator</option>'+
+                  '</select>';
+  }
     
   var modal = $(this)
   modal.find('.modal-body #user_id_edit').val(id);
   modal.find('.modal-body #user_name_edit').val(name);
   modal.find('.modal-body #user_username_edit').val(username);
   modal.find('.modal-body #user_type_edit').val(type);
+ //modal.find('.modal-body #t').val(type1);
 
 })
 
@@ -115,6 +130,7 @@ $('#EditPost').on('show.bs.modal', function (event) {
   var visit = button.data('post_visit_counter_edit')
   var status = button.data('post_status_edit')
   var priority = button.data('post_priority_edit')
+  
 
       
   var modal = $(this)
@@ -174,4 +190,8 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+</script>
+
+<script>
+  type1
 </script>

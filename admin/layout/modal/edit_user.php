@@ -74,11 +74,12 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label for="user_type" class="col-form-label"> User type:</label>
-                      <select class="form-control" id="user_type_edit" name="user_type_edit">
+                      <select class="form-control" id="user_type_edit_select" name="user_type_edit_select">
                     <option value="" disabled selected>Select...</option>
                     <option value="0" >User</option>
                     <option value="1">Administrator</option>
                   </select>
+                  <input type="text" name="user_type_edit" id="user_type_edit">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="user_password" class="col-form-label"> Password:</label>
@@ -105,6 +106,7 @@
                 </div>
                 
               </div>
+              <div id="p1"></div><div id="p2"></div>
               <br>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
