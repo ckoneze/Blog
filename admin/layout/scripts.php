@@ -235,4 +235,9 @@ confirm_password_edit.onkeyup = validatePassword_edit;
 
 <script type="text/javascript">
   $("#user_password_edit").password('toggle');
+  $("#confirm_password_edit").password('toggle');
+</script>
+<script type="text/javascript">
+  
+  $("#confirm_password_edit").password('toggle');
 </script>
