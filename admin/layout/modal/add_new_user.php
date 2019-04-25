@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label for="user_type" class="col-form-label"> User type:</label>
-                      <select class="form-control" id="user_type" name="user_type">
+                      <select class="form-control" id="user_type" name="user_type" required>
                     <option value="" disabled selected>Select...</option>
                     <option value="0" >User</option>
                     <option value="1">Administrator</option>
