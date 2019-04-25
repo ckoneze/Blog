@@ -86,7 +86,7 @@ $('#EditUser').on('show.bs.modal', function (event) {
   modal.find('.modal-body #user_type_edit').val(type);
   modal.find('.modal-body #user_gender_edit').val(gender);
   modal.find('.modal-body #user_password_edit').val(password);
-  modal.find('.modal-body #confirm_password').val(password);
+  modal.find('.modal-body #confirm_password_edit').val(password);
   modal.find('.modal-body #user_image_edit').val(image_user);
   //modal.find('.modal-body #user_name_write').val(name);
  //modal.find('.modal-body #t').val(type1);
@@ -214,4 +214,19 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+</script>
+ <script>
+  var password_edit = document.getElementById("user_password_edit")
+  , confirm_password_edit = document.getElementById("confirm_password_edit");
+
+function validatePassword_edit(){
+  if(password_edit.value != confirm_password_edit.value) {
+    confirm_password_edit.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password_edit.setCustomValidity('');
+  }
+}
+
+password_edit.onchange = validatePassword_edit;
+confirm_password_edit.onkeyup = validatePassword_edit;
 </script>
