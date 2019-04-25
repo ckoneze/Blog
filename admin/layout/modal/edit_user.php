@@ -62,13 +62,8 @@
           <div class="box box-primary">
             <div class="box-body box-profile">
               <p align="center"><img class="zoom" id="imageuser" name="imageuser"  src="" alt="User profile picture1" width="50"></p>
-
               <p id="user_name_write"></p>
-
               <p class="text-muted text-center">Software Engineer</p>
-
-
-
             </div>
             <script>
 function mouseOverUser() {
@@ -112,7 +107,7 @@ function mouseOverUser() {
                 <input type="hidden" name="user_type_edit" id="user_type_edit">
                 <div class="form-group col-md-4">
                   <label for="user_password" class="col-form-label"> Password:</label>
-                  <input type="password" data-minlength="6" class="form-control" name="user_password_edit" id="user_password_edit" placeholder="Enter Password Here" required="">
+                  <input type="password" data-minlength="6" class="form-control" name="user_password_edit" id="user_password_edit" placeholder="Enter Password Here" data-toggle="password" required="">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="user_password_reapet" class="col-form-label"> Confirm Password:</label>

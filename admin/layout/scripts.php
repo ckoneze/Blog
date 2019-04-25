@@ -230,3 +230,9 @@ function validatePassword_edit(){
 password_edit.onchange = validatePassword_edit;
 confirm_password_edit.onkeyup = validatePassword_edit;
 </script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+
+<script type="text/javascript">
+  $("#user_password_edit").password('toggle');
+</script>
