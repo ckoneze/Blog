@@ -43,7 +43,7 @@ $('#EditUser').on('show.bs.modal', function (event) {
   var name = button.data('user_name_edit')
   var username = button.data('user_username_edit')
   var email = button.data('user_email_edit')
-  var image = button.data('user_image_edit')
+  var image_user = button.data('user_image_edit')
   var type = button.data('user_type_edit')
   var gender = button.data('user_gender_edit')
   var password = button.data('user_password_edit')
@@ -76,6 +76,7 @@ $('#EditUser').on('show.bs.modal', function (event) {
                   '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1"> <i class="fa fa-female"aria-hidden="true"></i></label>'+
                   '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2" checked> <i class="fa fa-male" aria-hidden="true"></i></label>';
   }
+  document.getElementById("user_name_write").innerHTML ='<h3 class="profile-username text-center">' + name +'</h3>';
     
   var modal = $(this)
   modal.find('.modal-body #user_id_edit').val(id);
@@ -86,9 +87,10 @@ $('#EditUser').on('show.bs.modal', function (event) {
   modal.find('.modal-body #user_gender_edit').val(gender);
   modal.find('.modal-body #user_password_edit').val(password);
   modal.find('.modal-body #confirm_password').val(password);
-  modal.find('.modal-body #user_image_edit').val(image);
+  modal.find('.modal-body #user_image_edit').val(image_user);
+  //modal.find('.modal-body #user_name_write').val(name);
  //modal.find('.modal-body #t').val(type1);
-
+ mouseOverUser(this);
 })
 
 

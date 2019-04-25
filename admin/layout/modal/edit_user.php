@@ -15,23 +15,24 @@
         {
           $add_user_image = $_FILES["user_image"]["name"];
           $add_user_image_temp = $_FILES["user_image"]["tmp_name"];
+          move_uploaded_file($add_user_image_temp,"images/users/$add_user_image");
         }
         
         if (empty($add_user_image))
         {
           $add_user_image=$_POST['user_image_edit'];
         }
-         move_uploaded_file($add_user_image_temp,"images/users/$add_user_image");
+         
 
         $edit_user_code=$_POST['user_code_edit'];
         $edit_user_status=$_POST['user_status_edit'];
-        $edit_user_type=$_POST['user_type_edit'];
+        $edit_user_type=$_POST['user_type_edit_select'];
 
-        $sql_edit_user = "UPDATE users SET name='$edit_user_name', username='$edit_user_username', email='$edit_user_email', password='$edit_user_password', gender = '$edit_user_gender', image = '$add_user_image', code='$edit_user_code', status='$edit_user_status', type='$edit_user_type' WHERE id={$edit_post_id}";
+        $sql_edit_user = "UPDATE users SET name='$edit_user_name', username='$edit_user_username', email='$edit_user_email', password='$edit_user_password', gender = '$edit_user_gender', image = '$add_user_image', code='$edit_user_code', status='$edit_user_status', type='$edit_user_type' WHERE id={$edit_user_id}";
 
         
-        $result_sql_add_user= mysqli_query($dbconnection, $sql_add_user);
-        if (!$result_sql_add_user)
+        $result_sql_edit_user= mysqli_query($dbconnection, $sql_edit_user);
+        if (!$result_sql_edit_user)
                 {
                   die("Error description:" . mysqli_error());
                 }
@@ -60,15 +61,29 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+              <p align="center"><img class="zoom" id="imageuser" name="imageuser"  src="" alt="User profile picture1" width="50"></p>
 
-              <h3 class="profile-username text-center">Nina Mcintire</h3>
+              <p id="user_name_write"></p>
 
               <p class="text-muted text-center">Software Engineer</p>
 
 
 
             </div>
+            <script>
+function mouseOverUser() {
+   //var image_user = document.getElementById('user_image_edit');
+   var slikazaprikazusera = document.getElementById("user_image_edit").value; 
+   var putanjauser = 'images/users/';
+   imageuser.setAttribute('src', putanjauser + slikazaprikazusera);
+   
+   //alert(slikazaprikaz);
+}
+//function bigImg() {
+  // var image = document.getElementById('image');
+   //image.setAttribute('src', 'images/blog/nophoto-default1.jpg');
+//}
+</script>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->

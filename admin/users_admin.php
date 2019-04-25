@@ -165,9 +165,24 @@
               <?php
                 }
               ?>
-              <td style="text-align: center;"><?php echo $view_users_type ?></td>
-              <td style="text-align: center;">
+              <?php 
+                if ($view_users_type==1)
+                {
+               ?>
+              <td style="text-align: center;"><span class="label label-primary">Administrator</span></td>
 
+              <?php 
+                }
+                else
+                {
+              ?>
+              <td style="text-align: center;"><span class="label label-primary">User</span></td>
+              
+              <?php
+                }
+              ?>
+              
+                <td style="text-align: center;">
                 <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditUser" data-user_id_edit="<?= $view_users_id ?>" data-user_name_edit="<?= $view_users_name ?>" data-user_username_edit="<?= $view_users_username ?>" data-user_email_edit="<?= $view_users_email ?>" data-user_image_edit="<?= $view_users_image ?>" data-user_type_edit="<?= $view_users_type ?>" data-user_type_edit1="<?= $view_users_type ?>" data-user_gender_edit="<?= $view_users_gender ?>" data-user_password_edit="<?= $view_users_password ?>" > <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
 
                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteCategory" data-category_id_delete="<?= $view_category_id ?>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
