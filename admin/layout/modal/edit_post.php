@@ -24,7 +24,7 @@
         $edit_post_priority=$_POST['post_priority_edit'];
 
 
-        $sql_edit_post = "UPDATE posts SET post_category='$edit_post_category', post_title='$edit_post_title', post_autor='$edit_post_autor',post_date='$edit_post_date',post_edit_date='$current_date', post_image='$new_post_image',post_text='$edit_post_text', post_tag='$edit_post_tag', post_visit_counter='$edit_post_visit_counter', post_status='$edit_post_status', post_priority = '$edit_post_priority'  WHERE id={$edit_post_id}";
+        $sql_edit_post = "UPDATE posts SET post_category='$edit_post_category', post_title='$edit_post_title', post_autor='$edit_post_autor',post_date='$edit_post_date',post_edit_date='$current_date', post_image='$new_post_image',post_text='$edit_post_text', post_tag='$edit_post_tag', post_visit_counter='$edit_post_visit_counter', post_status ='$edit_post_status', post_priority = '$edit_post_priority' WHERE id={$edit_post_id}";
         $result_sql_edit_post= mysqli_query($dbconnection, $sql_edit_post);
         if (!$result_sql_edit_post)
                 {
@@ -121,9 +121,9 @@ function mouseOver() {
                     <input type="text" class="form-control" id="post_visit_counter_edit" name="post_visit_counter_edit">
                   </div>
                   <div class="col-sm-4">
-                    <label for="post_status_edit" class="col-form-label" >Status:</label><br>
-                    <input type="radio" name="post_status_edit" id="post_status_edit" value="1" checked=""> Publish
-                    <input type="radio" name="post_status_edit" id="post_status_edit" value="0"> Draft
+                    <label for="post_status_edit1" class="col-form-label" >Status:</label><br>
+                    <input type="radio" name="post_status_edit" value="1" checked=""> Publish
+                    <input type="radio" name="post_status_edit" value="0"> Draft
                   </div>
                   <div class="col-sm-4">
                     <label for="post_priority_edit" class="col-form-label">Priority:</label>

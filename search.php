@@ -33,7 +33,26 @@
                   $page = 1;
                 }
                 $start = $no_posts_per_page * $page - $no_posts_per_page;
-                $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 ORDER BY id desc LIMIT {$start} ,{$no_posts_per_page} ";
+
+                if (isset($_POST['search']))
+              {
+                 $search_text = $_POST['search_text'];
+                 $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 AND post_title LIKE '%$search_text%' OR post_text LIKE '%$search_text%' ORDER BY id DESC LIMIT {$start},{$no_posts_per_page}";
+              
+             
+                  
+              }
+              else
+              {
+                  if (isset($_GET['search']))
+                {
+                   $search_text = $_GET['search'];
+                   $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 AND post_title LIKE '%$search_text%' OR post_text LIKE '%$search_text%' ORDER BY id DESC LIMIT {$start},{$no_posts_per_page}";
+                
+                 }
+                  
+              }
+
                 $result_sql_select_post = mysqli_query($dbconnection, $sql_select_post);
                 while ($rowpost = mysqli_fetch_assoc($result_sql_select_post))
                 {
@@ -74,7 +93,7 @@
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
             <?php 
-                  $select_post_query = "SELECT * FROM posts WHERE post_status = 1";
+                  $select_post_query = "SELECT * FROM posts WHERE post_status = 1 AND post_title LIKE '%$search_text%' OR post_text LIKE '%$search_text%'";
                   $result_select_post_query = mysqli_query ($dbconnection, $select_post_query);
                   $sum_posts = mysqli_num_rows($result_select_post_query) ;
                   
@@ -86,7 +105,7 @@
 
 
                 ?>
-            <a class="page-link" href="index.php?page=<?php echo $previous ?>">&larr; Previous</a>
+            <a class="page-link" href="search.php?page=<?php echo $previous ?>&search=<?php echo $search_text ?>">&larr; Previous</a>
              <?php } ?>
           </li>
           <li class="page-item">
@@ -95,7 +114,7 @@
                   {
                     $next= $page + 1;
               ?>
-            <a class="page-link" href="index.php?page=<?php echo $next ?>">Next &rarr;</a>
+            <a class="page-link" href="search.php?page=<?php echo $next ?>&search=<?php echo $search_text ?>">Next &rarr;</a>
             <?php } ?>
           </li>
         </ul>

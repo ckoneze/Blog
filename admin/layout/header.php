@@ -29,7 +29,7 @@
               <i class="fa fa-comment"></i>
               <span class="label label-success"><?php echo $count_new_comments; ?></span>
             </a></li>
-            <li><a href="#">
+            <li data-toggle="modal" data-target="#InsertPost"><a href="#">
               <i class="fa fa-plus"></i><span class="hidden-xs"> Add post</span>
             </a></li>
             <!-- Modal add new post -->
@@ -269,7 +269,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="../layout/logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

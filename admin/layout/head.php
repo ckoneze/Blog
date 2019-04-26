@@ -1,3 +1,20 @@
+<?php 
+if (!isset($_SESSION['type']))
+{
+  header("Location: ../index.php");
+}
+
+if (isset($_SESSION['type']))
+  {
+   if ($_SESSION['type'] !=='1')
+    {
+      header("Location: ../index.php");
+    }
+ }
+
+
+
+ ?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
