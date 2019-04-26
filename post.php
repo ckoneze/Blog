@@ -1,4 +1,5 @@
 <?php 
+ob_start();
   include "admin/db_connection.php";
 ?>
 <!DOCTYPE html>
@@ -38,6 +39,11 @@
                   $view_post_priority = $rowpostpage['post_priority'];
                 }
       }
+      else
+      {
+        header("Location: index.php");
+      }
+
 
        ?>
       <!-- Post Content Column -->

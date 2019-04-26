@@ -200,6 +200,23 @@ mouseOver(this); //LOAD IMAGE
           }
       });
   </script>
+  
+  <script>
+            $('#selectAllCommentCheckbox').click(function(event) {   
+          if(this.checked) {
+              // Iterate each checkbox
+              $(':checkbox').each(function() {
+                  this.checked = true;                        
+              });
+          } else {
+              $(':checkbox').each(function() {
+                  this.checked = false;                       
+              });
+          }
+      });
+  </script>
+
+
   <script>
   var password = document.getElementById("user_password")
   , confirm_password = document.getElementById("confirm_password");

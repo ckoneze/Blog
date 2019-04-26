@@ -36,6 +36,7 @@
             <li><a href="category_admin.php"><i class="fa fa-server"></i></i> Category</a></li>
             <li><a href="post_admin.php"><i class="fa fa-file"></i> Post</a></li>
             <li><a href="users_admin.php"><i class="fa fa-users"></i> Users</a></li>
+            <li><a href="comment_admin.php"><i class="fa fa-users"></i> Comments</a></li>
           </ul>
         </li>
         <li class="treeview">
