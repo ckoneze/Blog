@@ -219,6 +219,9 @@
     <!-- Modal EDIT  category -->
     <?php include "layout/modal/edit_category.php" ?>
 <!-- // Modal EDIT  category -->
+<!-- Modal add new post -->
+    <?php include "layout/modal/add_new_post.php"; ?>
+     <!-- // Modal add new Post -->
   </div>
   <!-- /.content-wrapper -->
   <?php include "layout/footer.php"; ?>

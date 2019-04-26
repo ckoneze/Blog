@@ -33,7 +33,7 @@
               <i class="fa fa-plus"></i><span class="hidden-xs"> Add post</span>
             </a></li>
             <!-- Modal add new post -->
-            <?php // include "layout/modal/add_new_post.php"; ?>
+            <?php //include "layout/modal/add_new_post.php"; ?>
              <!-- // Modal add new Post -->
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
