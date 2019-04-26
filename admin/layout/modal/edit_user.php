@@ -111,14 +111,14 @@ function mouseOverUser() {
                 </div>
                 <div class="form-group col-md-4">
                   <label for="user_password_reapet" class="col-form-label"> Confirm Password:</label>
-                  <input type="password" class="form-control" name="confirm_password_edit" id="confirm_password_edit" placeholder="Confirm password" data-toggle="password" required>
+                  <input type="password" class="form-control" name="confirm_password_edit" id="confirm_password_edit" placeholder="Confirm password" data-toggle="passwordconfirm" required>
                 </div>
                 <div class="form-group col-md-4">
                       <label for="user_imagel" class="col-form-label">Image:</label>
                       <input type="file" name="user_image" id="user_image">
                       <input type="hidden" name="user_code_edit" id="user_code_edit" placeholder="Code">
                 </div>
-                <div class="form-group col-md-4" id="p2">
+                <div class="form-group col-md-4" id="p2" align="center">
                   
                 </div>
                 <div class="form-group col-md-4">

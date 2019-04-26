@@ -215,6 +215,7 @@ function validatePassword(){
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 </script>
+
  <script>
   var password_edit = document.getElementById("user_password_edit")
   , confirm_password_edit = document.getElementById("confirm_password_edit");
@@ -230,14 +231,14 @@ function validatePassword_edit(){
 password_edit.onchange = validatePassword_edit;
 confirm_password_edit.onkeyup = validatePassword_edit;
 </script>
-
+ <!-- /.show pass 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
 
 <script type="text/javascript">
-  $("#user_password_edit").password('toggle');
-  $("#confirm_password_edit").password('toggle');
+  //$("#user_password_edit").password('toggle');
+  //$("#confirm_password_edit").passwordconfirm('toggle');
 </script>
 <script type="text/javascript">
   
-  $("#confirm_password_edit").password('toggle');
-</script>
+ // $("#confirm_password_edit").password('toggle');
+</script>-->
