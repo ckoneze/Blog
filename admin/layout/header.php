@@ -29,7 +29,7 @@
               <i class="fa fa-comment"></i>
               <span class="label label-success"><?php echo $count_new_comments; ?></span>
             </a></li>
-            <li><a href="#" data-toggle="modal" data-target="#InsertPost">
+            <li><a href="#">
               <i class="fa fa-plus"></i><span class="hidden-xs"> Add post</span>
             </a></li>
             <!-- Modal add new post -->
