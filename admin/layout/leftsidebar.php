@@ -4,10 +4,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="images\0.jpg" class="zoom3" alt="User Image">
+          
+          <img src="images/users/<?php echo $success_login_image_admin; ?>" class="zoom3" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Nedžad Mešić</p>
+          <p><?php echo $success_login_name_admin; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>

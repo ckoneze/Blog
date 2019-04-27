@@ -60,7 +60,7 @@
                
 
              ?>
-          <a href="admin/" class="btn btn-default btn-flat">Administration</a>
+          <a href="admin/" class="btn btn-default btn-flat" target="_blank">Administration</a>
           <?php
            }
            else

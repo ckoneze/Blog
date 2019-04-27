@@ -15,6 +15,11 @@ if (isset($_SESSION['type']))
 
 
  ?>
+ <?php 
+              $success_login_username_admin = $_SESSION['username'];
+              $success_login_image_admin = $_SESSION['image'];
+              $success_login_name_admin = $_SESSION['name'];
+   ?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

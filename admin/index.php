@@ -527,6 +527,9 @@
     </section>
     <!-- /.content -->
   </div>
+  <!-- Modal add new post -->
+    <?php include "layout/modal/add_new_post.php"; ?>
+     <!-- // Modal add new Post -->
   <!-- /.content-wrapper -->
   <?php include "layout/footer.php"; ?>
 

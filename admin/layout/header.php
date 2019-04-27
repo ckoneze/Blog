@@ -235,16 +235,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="images\0.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Nedžad Mešić</span>
+              <img src="images/users/<?php echo $success_login_image_admin; ?>" class="user-image" alt="User Image">
+              <span class="hidden-xs"><?php echo $success_login_name_admin; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="images\0.jpg" class="zoom3" alt="User Image">
+                <img src="images/users/<?php echo $success_login_image_admin; ?>" class="zoom3" alt="User Image">
 
                 <p>
-                  Nedžad Mešić - Web Developer
+                  <?php echo $success_login_name_admin; ?> - Web Developer
                   <small>Since Nov. 2002</small>
                 </p>
               </li>
