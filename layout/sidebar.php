@@ -54,7 +54,21 @@
           
           <!-- Status -->
           <p align="center">
+            <?php 
+              if ($_SESSION['type'] =='1')
+              {
+               
+
+             ?>
           <a href="admin/" class="btn btn-default btn-flat">Administration</a>
+          <?php
+           }
+           else
+            {
+
+           ?>
+           <a href="profil.php/" class="btn btn-default btn-flat">Profil</a>
+           <?php } ?>
           <a href="layout/logout.php" class="btn btn-default btn-flat">Sign out</a></p>
         </div>
       </div>

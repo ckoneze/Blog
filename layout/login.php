@@ -34,7 +34,7 @@
                 $_SESSION['image'] = $user_login_image;
                 $_SESSION['name'] = $user_login_name;
               	echo " ok";
-              	header("Location: ../admin/index.php");
+              	header("Location: ../index.php");
               	
               }
               else
