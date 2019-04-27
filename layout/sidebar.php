@@ -4,15 +4,15 @@
             {
            ?>
         <div class="login-form">
-    <!--<form action="/examples/actions/confirmation.php" method="post">--> 
-        <h2 class="text-center">Sign in</h2>  
+    <!--<form action="/examples/actions/confirmation.php" method="post">
+        <h2 class="text-center">Sign in</h2>  --> 
          <!-- 
         <div class="text-center social-btn">
             <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
             <a href="#" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a>
       <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
         </div>--> 
-    <div class="or-seperator"><i></i></div>
+    <div class="or-seperator"><i>Sign in</i></div>
     <form action="layout/login.php" method="post">
         <div class="form-group">
           <div class="input-group">
