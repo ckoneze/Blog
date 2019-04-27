@@ -42,11 +42,13 @@
             else
             {
               $success_login_username = $_SESSION['username'];
+              $success_login_image = $_SESSION['image'];
+              $success_login_name = $_SESSION['name'];
            ?>
 <div class="card my-4">
         <div class="card-header">
-          <p align="center"><img  class="zoom3" src="https://pre00.deviantart.net/22e7/th/pre/i/2018/091/2/b/avatar_profil_by_jeje90an-dc7nava.jpg" width="110"></p>
-          <p align="center"><b>Welcome <?php echo $success_login_username ?></b></p>
+          <p align="center"><img  class="zoom3" src="admin/images/users/<?php echo $success_login_image; ?>" width="110"></p>
+          <p align="center"><b>Welcome <?php echo $success_login_name; ?></b></p>
         </div>
         <div class="card-header">
           

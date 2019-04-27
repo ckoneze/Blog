@@ -13,6 +13,9 @@
   <!-- Custom styles for this template -->
   <link href="blog-template/css/blog-home.css" rel="stylesheet">
   <link href="css/blog-post.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
 <style>
 .zoom1 {
   padding: 50px;

@@ -23,12 +23,16 @@
                $user_login_username = $row_user_login['username'];
                $user_login_password = $row_user_login['password'];
                $user_login_type = $row_user_login['type'];
+               $user_login_image = $row_user_login['image'];
+               $user_login_name = $row_user_login['name'];
               }
               if ($user_login_username === $username && $user_login_password === $password)
               {
 
               	$_SESSION['username'] = $user_login_username;
               	$_SESSION['type'] = $user_login_type;
+                $_SESSION['image'] = $user_login_image;
+                $_SESSION['name'] = $user_login_name;
               	echo " ok";
               	header("Location: ../admin/index.php");
               	
