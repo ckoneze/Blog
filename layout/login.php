@@ -25,14 +25,19 @@
                $user_login_type = $row_user_login['type'];
                $user_login_image = $row_user_login['image'];
                $user_login_name = $row_user_login['name'];
+               $user_login_email = $row_user_login['email'];
+               $user_login_gender = $row_user_login['gender'];
               }
               if ($user_login_username === $username && $user_login_password === $password)
               {
-
+                $_SESSION['id'] = $id_user_login;
               	$_SESSION['username'] = $user_login_username;
               	$_SESSION['type'] = $user_login_type;
                 $_SESSION['image'] = $user_login_image;
                 $_SESSION['name'] = $user_login_name;
+                $_SESSION['email'] = $user_login_email;
+                $_SESSION['password'] = $user_login_password;
+                $_SESSION['gender'] = $user_login_gender;
               	echo " ok";
               	header("Location: ../index.php");
               	

@@ -19,6 +19,11 @@ if (isset($_SESSION['type']))
               $success_login_username_admin = $_SESSION['username'];
               $success_login_image_admin = $_SESSION['image'];
               $success_login_name_admin = $_SESSION['name'];
+              $success_login_email_admin = $_SESSION['email'];
+              $success_login_type_admin = $_SESSION['type'];
+              $success_login_type_password = $_SESSION['password'];
+              $success_login_gender = $_SESSION['gender'];
+
    ?>
 <head>
   <meta charset="utf-8">

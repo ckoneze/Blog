@@ -102,12 +102,12 @@ function mouseOverUser() {
                   <label for="cat_title" class="col-form-label"> Email:</label>
                   <input type="email" class="form-control" id="user_email_edit" name="user_email_edit" placeholder="Enter Email Here" data-error="Bruh, that email address is invalid" required="">
                 </div>
-                <div id="p1" class="form-group col-md-4"></div>
+                <div id="p1" class="form-group col-md-4"></div> <input type="text" name="testg" id="testg">
 
                 <input type="hidden" name="user_type_edit" id="user_type_edit">
                 <div class="form-group col-md-4">
                   <label for="user_password" class="col-form-label"> Password:</label>
-                  <input type="password" data-minlength="6" class="form-control" name="user_password_edit" id="user_password_edit" placeholder="Enter Password Here" data-toggle="password" required="">
+                  <input type="text" data-minlength="6" class="form-control" name="user_password_edit" id="user_password_edit" placeholder="Enter Password Here" data-toggle="password" required="">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="user_password_reapet" class="col-form-label"> Confirm Password:</label>

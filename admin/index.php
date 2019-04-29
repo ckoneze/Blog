@@ -530,6 +530,7 @@
   <!-- Modal add new post -->
     <?php include "layout/modal/add_new_post.php"; ?>
      <!-- // Modal add new Post -->
+     <?php include "layout/modal/edit_user.php" ?>
   <!-- /.content-wrapper -->
   <?php include "layout/footer.php"; ?>
 

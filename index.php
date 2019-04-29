@@ -113,6 +113,7 @@
 
   <!-- Footer -->
   <?php include "layout/footer.php"; ?>
+  
 
   <!-- Bootstrap core JavaScript -->
   <script src="blog-template/vendor/jquery/jquery.min.js"></script>

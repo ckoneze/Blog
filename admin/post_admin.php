@@ -229,6 +229,9 @@
     <!-- Modal EDIT  Post -->
     <?php include "layout/modal/edit_post.php"; ?>
     <!-- // Modal EDIT  Post -->
+    <!-- Modal EDIT  user -->
+    <?php include "layout/modal/edit_user.php" ?>
+<!-- // Modal EDIT  user -->
   </div>
   <!-- /.content-wrapper -->
   <?php include "layout/footer.php"; ?>

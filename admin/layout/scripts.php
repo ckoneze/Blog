@@ -88,6 +88,8 @@ $('#EditUser').on('show.bs.modal', function (event) {
   modal.find('.modal-body #user_password_edit').val(password);
   modal.find('.modal-body #confirm_password_edit').val(password);
   modal.find('.modal-body #user_image_edit').val(image_user);
+
+  modal.find('.modal-body #testg').val(gender);
   //modal.find('.modal-body #user_name_write').val(name);
  //modal.find('.modal-body #t').val(type1);
  mouseOverUser(this);

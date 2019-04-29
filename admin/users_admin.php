@@ -222,9 +222,9 @@
     <!-- Modal Delete Category-->
       <?php //include "layout/modal/delete_user.php" ?>
     <!-- // Modal Delete Category-->
-    <!-- Modal EDIT  category -->
+    <!-- Modal EDIT  user -->
     <?php include "layout/modal/edit_user.php" ?>
-<!-- // Modal EDIT  category -->
+<!-- // Modal EDIT  user -->
 <!-- Modal add new post -->
     <?php include "layout/modal/add_new_post.php"; ?>
      <!-- // Modal add new Post -->
