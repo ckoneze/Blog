@@ -36,12 +36,12 @@ if (isset($_GET['postid']))
                       $view_users_status_for_comm = $rowusers_for_comm['status'];
                               $view_users_type_for_comm = $rowusers_for_comm['type'];
                       
-                    }
+                    
                  
 
              ?>
 <div class="media mb-4">
-          <img class="zoom3" src="admin/images/users/nophoto-default.jpg" alt="" width="50">
+          <img class="zoom3" src="admin/images/users/<?php echo $view_users_image_for_comm; ?>" alt="" width="50">
           <div class="media-body">
            
             <h5 class="mt-0">
@@ -64,6 +64,7 @@ if (isset($_GET['postid']))
           </div>
         </div>
 <?php 
+}
 }
 else
   {
