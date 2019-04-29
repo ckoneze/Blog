@@ -16,6 +16,8 @@ if (isset($_GET['postid']))
                   $view_comm_date = $rowcomment_for_post['comm_date'];
                   
 ?>
+
+
  <?php 
               if (is_numeric($view_comm_autor))
                   {
@@ -34,7 +36,7 @@ if (isset($_GET['postid']))
                       $view_users_image_for_comm = $rowusers_for_comm['image'];
                       $view_users_code_for_comm = $rowusers_for_comm['code'];
                       $view_users_status_for_comm = $rowusers_for_comm['status'];
-                              $view_users_type_for_comm = $rowusers_for_comm['type'];
+                      $view_users_type_for_comm = $rowusers_for_comm['type'];
                       
                     
                  

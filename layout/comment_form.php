@@ -28,7 +28,8 @@
         <div class="card my-4">
           <h5 class="card-header">Leave a Comment:</h5>
           <div class="card-body">
-            <form method="post" action="">
+
+            <form method="post" action="" onsubmit="myFunction()">
               <div class="form-group">
                 <?php 
                    if (!isset($_SESSION['type']))
@@ -61,12 +62,15 @@
               </div>
               <button type="submit" name="save_comment" class="btn btn-primary">Submit</button>
             </form>
+            
+
           </div>
         </div>
         <!-- Success Alert -->
     
         <script>
 function myFunction() {
-  alert("Hello! I am an alert box!");
+  alert("Thanks for commenting!!");
+  document.getElementById("p11").innerHTML = '<label for="user_type" class="col-form-label"> User type:</label>';
 }
 </script>

@@ -51,7 +51,7 @@ ob_start();
 
         <!-- Title -->
         <h1 class="mt-4"><?php echo $view_post_title ?></h1>
-
+        <div id="p11"></div>
         <!-- Author -->
         <p class="lead">
          <img src="admin\images\0.jpg" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
