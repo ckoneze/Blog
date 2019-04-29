@@ -30,10 +30,31 @@
           <div class="card-body">
             <form method="post" action="">
               <div class="form-group">
+                <?php 
+                   if (!isset($_SESSION['type']))
+                    {
+                      # code...
+                    
+
+                 ?>
                 <label for="autor" class="col-form-label">Autor:</label>
                 <input type="text" class="form-control" id="comm_autor" name="comm_autor" required="">
                  <label for="email" class="col-form-label">Email:</label>
                 <input type="email" class="form-control" id="comm_email" name="comm_email" required=""><br>
+                <?php 
+                  }
+                  else
+                  {
+                  
+                 ?>
+                 <p class="lead">
+                   <img src="admin/images/users/<?php echo $success_login_image_admin; ?>" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
+                      <a href="#"><?php echo $success_login_name_admin; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
+                    
+                  </p>
+                <?php } ?>
+                <input type="hidden" class="form-control" id="comm_autor" name="comm_autor" value="<?php echo $success_login_name_admin; ?>" required="">
+                <input type="hidden" class="form-control" id="comm_email" name="comm_email" value="<?php echo $success_login_email_admin; ?>" required=""><br>
                 <textarea class="form-control" name="comm_text" rows="6" required=""></textarea>
               </div>
               <button type="submit" name="save_comment" class="btn btn-primary">Submit</button>
