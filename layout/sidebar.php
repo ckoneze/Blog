@@ -42,18 +42,21 @@
             else
             {
               $success_login_id = $_SESSION['id'];
-              $success_login_username = $_SESSION['username'];
-              $success_login_image = $_SESSION['image'];
-              $success_login_name = $_SESSION['name'];
+              $success_login_name_admin = $_SESSION['name'];
+              $success_login_username_admin = $_SESSION['username'];
               $success_login_email_admin = $_SESSION['email'];
+              $success_login_type_password_admin = $_SESSION['password'];
+              $success_login_gender_admin = $_SESSION['gender'];
+              $success_login_image_admin = $_SESSION['image'];
+              $success_login_code_admin = $_SESSION['code'];
+              $success_login_status_admin = $_SESSION['status'];
               $success_login_type_admin = $_SESSION['type'];
-              $success_login_type_password = $_SESSION['password'];
-              $success_login_gender = $_SESSION['gender'];
+              
            ?>
 <div class="card my-4">
         <div class="card-header">
-          <p align="center"><img  class="zoom3" src="admin/images/users/<?php echo $success_login_image; ?>" width="110"></p>
-          <p align="center"><b>Welcome <?php echo $success_login_name; ?></b></p>
+          <p align="center"><img  class="zoom3" src="admin/images/users/<?php echo $success_login_image_admin; ?>" width="110"></p>
+          <p align="center"><b>Welcome <?php echo $success_login_name_admin; ?></b></p>
         </div>
         <div class="card-header">
           

@@ -88,7 +88,7 @@ function mouseOverUser() {
                 <form method="post" action="" enctype="multipart/form-data">
  
                 <div class="form-group col-md-4">
-                  <input type="hidden" name="user_id_edit" id="user_id_edit">
+                  <input type="text" name="user_id_edit" id="user_id_edit">
                   <label for="cat_title" class="col-form-label"> Name:</label>
                   <input type="text" class="form-control" id="user_name_edit" name="user_name_edit" placeholder="Enter Name Here" required="">
                   
@@ -104,7 +104,7 @@ function mouseOverUser() {
                 </div>
                 <div id="p1" class="form-group col-md-4"></div> <input type="text" name="testg" id="testg">
 
-                <input type="hidden" name="user_type_edit" id="user_type_edit">
+                <input type="text" name="user_type_edit" id="user_type_edit">
                 <div class="form-group col-md-4">
                   <label for="user_password" class="col-form-label"> Password:</label>
                   <input type="text" data-minlength="6" class="form-control" name="user_password_edit" id="user_password_edit" placeholder="Enter Password Here" data-toggle="password" required="">

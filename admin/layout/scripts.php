@@ -66,16 +66,7 @@ $('#EditUser').on('show.bs.modal', function (event) {
                   '</select>';
   }
 
-  if(gender == 1) {
-    document.getElementById("p2").innerHTML ='<label for="cat_title" class="col-form-label"> Gender:</label><br>'+
-                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1" checked> <i class="fa fa-female"aria-hidden="true"></i></label>'+
-                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2"> <i class="fa fa-male" aria-hidden="true"></i></label>';
-
-  } else {
-    document.getElementById("p2").innerHTML = '<label for="cat_title" class="col-form-label"> Gender:</label><br>'+
-                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1"> <i class="fa fa-female"aria-hidden="true"></i></label>'+
-                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2" checked> <i class="fa fa-male" aria-hidden="true"></i></label>';
-  }
+  
   document.getElementById("user_name_write").innerHTML ='<h3 class="profile-username text-center">' + name +'</h3>';
     
   var modal = $(this)
@@ -93,6 +84,18 @@ $('#EditUser').on('show.bs.modal', function (event) {
   //modal.find('.modal-body #user_name_write').val(name);
  //modal.find('.modal-body #t').val(type1);
  mouseOverUser(this);
+if(gender == 1) {
+    document.getElementById("p2").innerHTML ='<label for="cat_title" class="col-form-label"> Gender:</label><br>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1" checked> <i class="fa fa-female"aria-hidden="true"></i></label>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2"> <i class="fa fa-male" aria-hidden="true"></i></label>';
+
+  } else {
+    document.getElementById("p2").innerHTML = '<label for="cat_title" class="col-form-label"> Gender:</label><br>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="1"> <i class="fa fa-female"aria-hidden="true"></i></label>'+
+                  '<label><input type="radio" name="user_gender_edit" id="user_gender_edit" value="2" checked> <i class="fa fa-male" aria-hidden="true"></i></label>';
+  }
+
+ 
 })
 
 
