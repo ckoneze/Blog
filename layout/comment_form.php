@@ -24,7 +24,9 @@
                   header("Location: " . $_SERVER['REQUEST_URI']);
                 }
       }
-     ?>        
+     ?> 
+
+           
         <div class="card my-4">
           <h5 class="card-header">Leave a Comment:</h5>
           <div class="card-body">
@@ -72,5 +74,8 @@
 function myFunction() {
   alert("Thanks for commenting!!");
   document.getElementById("p11").innerHTML = '<label for="user_type" class="col-form-label"> User type:</label>';
+  var messageSend = 1;
+  //commentMessage();
 }
 </script>
+
