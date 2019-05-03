@@ -2,6 +2,35 @@
 ob_start();
   include "admin/db_connection.php";
 ?>
+<?php
+      
+      if (isset($_GET['postid'])) 
+      {
+        $edit_post_id_visit=$_GET['postid'];
+
+        $sql_select_post_visit = "SELECT * FROM posts WHERE id={$edit_post_id_visit}";
+                $result_sql_select_post_visit = mysqli_query($dbconnection, $sql_select_post_visit);
+                while ($rowpost_visit = mysqli_fetch_assoc($result_sql_select_post_visit))
+                {
+                  
+                  $view_post_visit_counter_all_visits = $rowpost_visit['post_visit_counter'];
+
+                }
+
+
+        $sql_edit_post_visit = "UPDATE posts SET post_visit_counter='$view_post_visit_counter_all_visits'+1 WHERE id={$edit_post_id_visit}";
+        $result_sql_edit_post_visit= mysqli_query($dbconnection, $sql_edit_post_visit);
+        if (!$result_sql_edit_post_visit)
+                {
+                   die("Error description:" . mysqli_error());
+                }
+                else
+                {
+                  //echo "Data added successfully";
+                  //header("Location: post_admin.php");
+                }
+      }
+     ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -75,9 +75,10 @@
                          ?>
                       </select>
                     </div>
-                    <div class="col-sm-4">
-                      <label for="post_autor_edit" class="col-form-label">Autor:</label>
-                      <input type="text" class="form-control" id="post_autor_edit" name="post_autor_edit">
+                    <div class="col-sm-4" id="author">
+                      <!--
+                      <label for="post_autor_edit" class="col-form-label">Autor:</label>-->
+                      <input type="hidden" class="form-control" id="post_autor_edit" name="post_autor_edit">
                     </div>
                     
                   </div><br>

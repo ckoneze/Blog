@@ -84,7 +84,7 @@
                       </select>
                     </div>
                     <div class="col-sm-4">
-                      <label for="post_autor" class="col-form-label">Autor:</label>
+                      <label for="post_autor" class="col-form-label">Author:</label>
                       <p><b><?php echo $success_login_name_admin; ?></b>  &nbsp;<img src="images/users/<?php echo $success_login_image_admin; ?>" class="zoom3" alt="User Image" width="50"></p>
                       <input type="hidden" class="form-control" id="post_autor" name="post_autor" value="<?php echo $success_login_id; ?>">
                     </div>

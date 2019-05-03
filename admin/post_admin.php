@@ -155,8 +155,28 @@
               <td style="text-align: center;">
                 <input type="checkbox" class="form-check-input" id="selectOneCheckBoxArray" name="selectOneCheckBoxArray[]" value="<?php echo $view_post_id; ?>">
               </td>
-              <td style="text-align: left;"><?php echo $view_post_title ?></td>
-              <td style="text-align: center;"><?php echo $view_post_autor ?></td>
+              <td style="text-align: left;"><a href="../post.php?postid=<?= $view_post_id; ?>" target="_blank" style="color:black"><?php echo $view_post_title ?></a></td>
+              <?php 
+                $sql_select_users = "SELECT * FROM users WHERE id={$view_post_autor}";
+                $result_sql_select_users = mysqli_query($dbconnection, $sql_select_users);
+                while ($rowusers = mysqli_fetch_assoc($result_sql_select_users))
+                {
+                  $view_users_id = $rowusers['id'];
+                  $view_users_name = $rowusers['name'];
+                  $view_users_username = $rowusers['username'];
+                  $view_users_email = $rowusers['email'];
+                  $view_users_password = $rowusers['password'];
+                  $view_users_gender = $rowusers['gender'];
+                  $view_users_image = $rowusers['image'];
+                  $view_users_code = $rowusers['code'];
+                  $view_users_status = $rowusers['status'];
+                  $view_users_type = $rowusers['type'];
+                }
+             ?>
+
+
+
+              <td style="text-align: center;"><?php echo $view_users_name ?></td>
               <?php 
                     $sql_select_category_by_id = "SELECT * FROM categories WHERE id ={$view_post_category}";
                     $result_sql_select_category_by_id = mysqli_query($dbconnection, $sql_select_category_by_id);
@@ -184,7 +204,20 @@
               <?php
                 }
               ?>
-              <td style="text-align: center;"><span class="label label-success">23584</span></td>
+              <td style="text-align: center;">
+                <span class="label label-success">
+                  <?php 
+                $sql_select_comment = "SELECT * FROM comments WHERE postid={$view_post_id}";
+                $result_sql_select_comment = mysqli_query($dbconnection, $sql_select_comment);
+                $count_cooments_for_post=0;
+                while ($rowcomment = mysqli_fetch_assoc($result_sql_select_comment))
+                {
+                  $count_cooments_for_post++;
+                }
+                echo $count_cooments_for_post++;
+             ?>
+                  
+                </span></td>
               <td style="text-align: center;">
 
                 <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditPost" data-post_id_edit="<?= $view_post_id ?>" data-post_category_edit="<?= $view_post_category ?>" data-post_title_edit="<?= $view_post_title ?>" data-post_autor_edit="<?= $view_post_autor ?>" data-post_date_edit="<?= $view_post_date ?>" data-post_edit_date_edit="<?= $view_post_edit_date ?>" data-post_image_edit="<?= $view_post_image ?>" data-post_text_edit="<?= $view_post_text ?>" data-post_tag_edit="<?= $view_post_tag ?>" data-post_visit_counter_edit="<?= $view_post_visit_counter ?>" data-post_status_edit="<?= $view_post_status ?>" data-post_priority_edit="<?= $view_post_priority ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>

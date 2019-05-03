@@ -179,6 +179,9 @@ $('#EditPost').on('show.bs.modal', function (event) {
   //document.getElementById('foo').innerHTML = '<img src="images/blog" + image/>';
 //document.getElementById('foo').innerHTML = '<img src="img/apple_' + image 'id="imageBox"/>';
 
+
+
+
 mouseOver(this); //LOAD IMAGE
 
    CKEDITOR.instances['post_text_edit'].setData(text)
