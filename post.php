@@ -53,9 +53,19 @@ ob_start();
         <h1 class="mt-4"><?php echo $view_post_title ?></h1>
         <div id="p11"></div>
         <!-- Author -->
+        <?php 
+                $sql_select_users_article = "SELECT * FROM users WHERE id={$view_post_autor}";
+                $result_sql_select_users_article = mysqli_query($dbconnection, $sql_select_users_article);
+                while ($rowusers_article = mysqli_fetch_assoc($result_sql_select_users_article))
+                {
+                  $view_users_id = $rowusers_article['id'];
+                  $view_users_name = $rowusers_article['name'];
+                  $view_users_image = $rowusers_article['image'];
+                } 
+             ?>
         <p class="lead">
-         <img src="admin\images\0.jpg" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
-            By <a href="#"><?php echo $view_post_autor; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
+         <img src="admin/images/users/<?php echo $view_users_image; ?>" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
+            By <a href="#"><?php echo $view_users_name; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
           
         </p>
 

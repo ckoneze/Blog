@@ -72,7 +72,7 @@
     
         <script>
 function myFunction() {
-  alert("Thanks for commenting!!");
+  alert("Your comment is awaiting moderation and your will be visible after it has been approved!!");
   document.getElementById("p11").innerHTML = '<label for="user_type" class="col-form-label"> User type:</label>';
   var messageSend = 1;
   //commentMessage();
