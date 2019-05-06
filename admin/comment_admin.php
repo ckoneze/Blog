@@ -177,9 +177,9 @@
               ?>
               <td style="text-align: center;">
 
-                <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditCategory" data-category_id_edit="<?= $view_category_id ?>" data-category_title_edit="<?= $view_cat_title ?>" data-cat_desc_edit="<?= $view_cat_desc ?>" data-cat_slug_edit="<?= $view_cat_slug ?>" data-cat_priority_edit="<?= $view_cat_priority ?>" data-cat_date_edit="<?= $view_cat_date ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+                <button type="button" name="edit" class="btn btn-warning" data-toggle="modal" data-target="#EditComment" data-comment_id_edit="<?= $view_comm_id ?>" data-comment_postid="<?= $view_comm_postid ?>" data-comment_autor="<?= $view_comm_autor ?>" data-comment_email="<?= $view_comm_email ?>" data-comment_text="<?= $view_comm_text ?>" data-comment_date="<?= $view_comm_date ?>"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
 
-               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteCategory" data-category_id_delete="<?= $view_category_id ?>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
+               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteComment" data-comment_id_delete="<?= $view_comm_id ?>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
               </td>
             </tr>
             <?php
@@ -214,10 +214,10 @@
       <?php include "layout/modal/add_new_category.php" ?>
      <!-- // Modal add new category -->
     <!-- Modal Delete Category-->
-      <?php include "layout/modal/delete_category.php" ?>
+      <?php include "layout/modal/delete_comment.php" ?>
     <!-- // Modal Delete Category-->
     <!-- Modal EDIT  category -->
-    <?php include "layout/modal/edit_category.php" ?>
+    <?php include "layout/modal/edit_comment.php" ?>
 <!-- // Modal EDIT  category -->
 <!-- Modal add new post -->
     <?php include "layout/modal/add_new_post.php"; ?>

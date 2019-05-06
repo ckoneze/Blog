@@ -190,7 +190,37 @@ mouseOver(this); //LOAD IMAGE
 
 
 
+$('#EditComment').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget)
+  var id = button.data('comment_id_edit')
+  var postid = button.data('comment_postid')
+  var comment_autor = button.data('comment_autor')
+  var comment_email = button.data('comment_email')
+  var comment_text = button.data('comment_text')
+  var comment_date = button.data('comment_date')
+    
+  var modal = $(this)
+  modal.find('.modal-body #comm_id_edit').val(id);
+  modal.find('.modal-body #comm_postid_edit').val(postid);
+  modal.find('.modal-body #comm_autor_edit').val(comment_autor);
+  modal.find('.modal-body #comm_email_edit').val(comment_email);
+  modal.find('.modal-body #comm_text_edit').val(comment_text);
+  modal.find('.modal-body #comm_date_edit').val(comment_date);
 
+})
+
+ $('#DeleteComment').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var comment_id_delete = button.data('comment_id_delete') // Extract info from data-* attributes
+
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  //modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body #comment_id_delete').val(comment_id_delete);
+
+ // modal.find('.modal-body ozakadrzave').val(ozakadrzave)
+}) 
  
 </script>
 
