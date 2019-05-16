@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                   <label for="cat_title_edit" class="col-form-label">Comment:</label>
-                  <input type="text" class="form-control" id="comm_text_edit" name="comm_text_edit" placeholder="Enter Comment Here" required="">
+                  <textarea rows="4" cols="50" class="form-control" id="comm_text_edit" name="comm_text_edit" placeholder="Enter Comment Here" required="" ></textarea>  
                 </div>
                 
                 <div class="col-sm-4">

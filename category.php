@@ -21,6 +21,17 @@
         <?php 
         if (isset($_GET['catid'])) 
         {
+          $no_posts_per_page = 5;
+          if (isset($_GET['page']))
+          {
+            $page = $_GET['page'];
+          }
+          else
+          {
+            $page = 1;
+          }
+          $start = $no_posts_per_page * $page - $no_posts_per_page;
+
           $selected_category_page= $_GET['catid'];
           $sql_select_category_page = "SELECT * FROM categories WHERE id = {$selected_category_page}";
           $result_sql_select_category_page = mysqli_query($dbconnection, $sql_select_category_page);
@@ -37,7 +48,7 @@
           <!-- <small>Secondary Text</small>-->
         </h1>
         <?php 
-                $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 AND post_category = {$selected_category_page} ORDER BY id desc";
+                $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 AND post_category = {$selected_category_page} ORDER BY id desc LIMIT {$start} ,{$no_posts_per_page}";
                 $result_sql_select_post = mysqli_query($dbconnection, $sql_select_post);
                 $post_counter_for_category = 0;
                 while ($rowpost = mysqli_fetch_assoc($result_sql_select_post))
@@ -95,10 +106,30 @@
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
+            <?php 
+                  $select_post_query = "SELECT * FROM posts WHERE post_status = 1 AND post_category = {$selected_category_page}";
+                  $result_select_post_query = mysqli_query ($dbconnection, $select_post_query);
+                  $sum_posts = mysqli_num_rows($result_select_post_query) ;
+                  
+                  $allpages = ceil($sum_posts / $no_posts_per_page);
+                  
+                if($page > 1)
+                {
+                  $previous= $page - 1;
+
+
+                ?>
+            <a class="page-link" href="category.php?catid=<?= $view_category_id; ?>&page=<?php echo $previous ?>">&larr; Previous</a>
+             <?php } ?>
           </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
+          <li class="page-item">
+            <?php 
+                if ($page < $allpages)
+                  {
+                    $next= $page + 1;
+              ?>
+            <a class="page-link" href="category.php?catid=<?= $view_category_id; ?>&page=<?php echo $next ?>">Next &rarr;</a>
+            <?php } ?>
           </li>
         </ul>
 
