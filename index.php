@@ -73,7 +73,7 @@
              ?>
           <div class="card-footer text-muted">
             <img src="admin/images/users/<?php echo $view_users_image; ?>" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
-            By <a href="#"><?php echo $view_users_name; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
+            By <a href="author.php?auth=<?= $view_users_id; ?>"><?php echo $view_users_name; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
             | <?php echo $view_post_date; ?>
           </div>
         </div>

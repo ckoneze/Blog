@@ -19,28 +19,34 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
         <?php 
-        if (isset($_GET['catid'])) 
+        if (isset($_GET['auth'])) 
         {
-          $selected_category_page= $_GET['catid'];
-          $sql_select_category_page = "SELECT * FROM categories WHERE id = {$selected_category_page}";
-          $result_sql_select_category_page = mysqli_query($dbconnection, $sql_select_category_page);
-                while ($rowcategorypage = mysqli_fetch_assoc($result_sql_select_category_page))
+          $selected_auth_id= $_GET['auth'];
+          $sql_select_auth_posts = "SELECT * FROM users WHERE id = {$selected_auth_id}";
+          $result_sql_select_auth_post = mysqli_query($dbconnection, $sql_select_auth_posts);
+                while ($row_auth_post = mysqli_fetch_assoc($result_sql_select_auth_post))
                 {
-                  $view_category_id = $rowcategorypage['id'];
-                  $view_cat_title = $rowcategorypage['cat_title'];
+                  $view_user_id = $row_auth_post['id'];
+                  $view_user_name = $row_auth_post['name'];
+                  $view_user_image = $row_auth_post['image'];
                 }
         }
 
          ?>
+         <div class="card-footer text-muted">
+            <img src="admin/images/users/<?php echo $view_user_image; ?>" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
+            Web developer <a href="#">VirtuaPHP</a><br><?php echo $view_user_name; ?></a> 
+          </div>
 
-        <h1 class="my-4"><?php echo $view_cat_title; ?>
+        <h1 class="my-4"><?php //echo $view_cat_title; ?>
           <!-- <small>Secondary Text</small>-->
         </h1>
         <?php 
-                $sql_select_post = "SELECT * FROM posts WHERE post_status = 1 AND post_category = {$selected_category_page} ORDER BY id desc";
-                $result_sql_select_post = mysqli_query($dbconnection, $sql_select_post);
+                $sql_select_post_auth = "SELECT * FROM posts WHERE post_status = 1 AND post_autor = {$selected_auth_id} ORDER BY id desc";
+                $result_sql_select_post_auth = mysqli_query($dbconnection, $sql_select_post_auth);
                 $post_counter_for_category = 0;
-                while ($rowpost = mysqli_fetch_assoc($result_sql_select_post))
+
+                while ($rowpost = mysqli_fetch_assoc($result_sql_select_post_auth))
                 {
                   $post_counter_for_category++;
                   $view_post_id = $rowpost['id'];
@@ -56,6 +62,7 @@
                   $view_post_status = $rowpost['post_status'];
                   $view_post_priority = $rowpost['post_priority'];
              ?>
+
         <!-- Blog Post -->
         <div class="card mb-4">
           <img class="card-img-top" src="admin/images/blog/<?php  echo $view_post_image; ?>" alt="Card image cap">
@@ -67,17 +74,13 @@
             </p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
-          <div class="card-footer text-muted">
-            <img src="admin\images\0.jpg" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
-            By <a href="#"><?php echo $view_post_autor; ?></a> <br>Web developer <a href="#">VirtuaPHP</a>
-            | <?php echo $view_post_date; ?>
-          </div>
+       
         </div>
       <?php
        }
 
        if ($post_counter_for_category==0) {
-         echo "<h1>Sorry. No posts in this category!</h1>";
+         echo "<h1>Sorry. No posts from this user!</h1>";
        }
        ?>
 
