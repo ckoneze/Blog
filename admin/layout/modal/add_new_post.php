@@ -109,18 +109,19 @@
                     <input type="text" class="form-control" id="post_tag" name="post_tag">
                   </div>
                   <div class="row">
-                  <div class="col-sm-4">
-                    <label for="post_visit_counter" class="col-form-label">Visit counter:</label>
-                    <input type="text" class="form-control" id="post_visit_counter" name="post_visit_counter">
-                  </div>
+                 
                   <div class="col-sm-4">
                     <label for="post_status" class="col-form-label" >Status:</label><br>
                     <input type="radio" name="post_status" id="post_status" value="1" checked=""> Publish
                     <input type="radio" name="post_status" id="post_status" value="0"> Draft
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-2">
                     <label for="post_priority" class="col-form-label">Priority:</label>
-                    <input type="text" class="form-control" id="post_priority" name="post_priority">
+                    <input type="text" class="form-control" id="post_priority" name="post_priority" value="1">
+                  </div>
+                   <div class="col-sm-4">
+                    
+                    <input type="hidden" class="form-control" id="post_visit_counter" name="post_visit_counter" value="0">
                   </div>
                 </div>
                 
