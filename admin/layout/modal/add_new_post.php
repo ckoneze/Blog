@@ -4,6 +4,7 @@
       {
         $add_post_category=$_POST['category_id']; //category_id    -select name
         $add_post_title=$_POST['post_title'];
+        $add_post_title = mysqli_real_escape_string($dbconnection,$add_post_title);
         $add_post_autor=$_POST['post_autor'];
         $add_post_date=$_POST['post_date'];
         $add_post_edit_date=$current_date;

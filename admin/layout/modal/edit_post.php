@@ -5,6 +5,7 @@
         $edit_post_id=$_POST['post_id_edit'];
         $edit_post_category=$_POST['post_category_edit'];
         $edit_post_title=$_POST['post_title_edit'];
+        $edit_post_title = mysqli_real_escape_string($dbconnection,$edit_post_title);
         $edit_post_autor=$_POST['post_autor_edit'];
         $edit_post_date=$_POST['post_date_edit'];
         $edit_post_edit_date=$_POST['post_edit_date_edit'];
