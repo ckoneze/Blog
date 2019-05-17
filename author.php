@@ -33,12 +33,15 @@
         }
 
          ?>
+         <br>
          <div class="card-footer text-muted">
             <img src="admin/images/users/<?php echo $view_user_image; ?>" class="zoom3" alt="User Image" width="50" align="left" hspace="5">
-            Web developer <a href="#">VirtuaPHP</a><br><?php echo $view_user_name; ?></a> 
-          </div>
+            <h3><?php echo $view_user_name; ?></h3>
+            Web developer <a href="#">VirtuaPHP</a><br>
+            <a href=""> <i class="fas fa-envelope"></i></a>&nbsp;&nbsp;<a href=""><i class="fab fa-facebook"></i></a>
+          </div> <div class="card-footer text-muted">I have written professionally about technology for my entire adult professional life - about 20 years. I aim to figure out how complicated technology works and explain it in a way anyone can understand.</div>
 
-        <h1 class="my-4"><?php //echo $view_cat_title; ?>
+        <h3 class="my-4">The Latest from<?php echo $view_user_name; ?>
           <!-- <small>Secondary Text</small>-->
         </h1>
         <?php 
