@@ -119,18 +119,17 @@ function mouseOver() {
                   </div>
                   <div class="row">
                   <div class="col-sm-4">
-                    <label for="post_visit_counter_edit" class="col-form-label">Visit counter:</label>
-                    <input type="text" class="form-control" id="post_visit_counter_edit" name="post_visit_counter_edit">
-                  </div>
-                  <div class="col-sm-4">
                     <label for="post_status_edit1" class="col-form-label" >Status:</label><br>
                     <input type="radio" name="post_status_edit" value="1" checked=""> Publish
                     <input type="radio" name="post_status_edit" value="0"> Draft
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-2">
                     <label for="post_priority_edit" class="col-form-label">Priority:</label>
                     <input type="text" class="form-control" id="post_priority_edit" name="post_priority_edit">
                     <input type="hidden" name="post_date_edit" id="post_date_edit">
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="hidden" class="form-control" id="post_visit_counter_edit" name="post_visit_counter_edit">
                   </div>
                 </div>
                 
