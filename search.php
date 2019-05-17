@@ -19,8 +19,8 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
+        <h1 class="my-4">Search results:
+          <small></small>
         </h1>
         <?php 
                 $no_posts_per_page = 5;
@@ -54,6 +54,7 @@
               }
 
                 $result_sql_select_post = mysqli_query($dbconnection, $sql_select_post);
+                $search_counter = 0;
                 while ($rowpost = mysqli_fetch_assoc($result_sql_select_post))
                 {
                   $view_post_id = $rowpost['id'];
