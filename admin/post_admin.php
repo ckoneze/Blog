@@ -76,7 +76,7 @@
         </div>
         <div class="box-body">
           
-          <form action="" method="post">
+          <form action="" method="post" onsubmit="return confirm('Are you sure you want to do that?');">
            <table width=100%>
             <tr>
                <th>

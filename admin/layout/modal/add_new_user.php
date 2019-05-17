@@ -5,7 +5,8 @@
         $add_user_name=$_POST['user_name'];
         $add_user_username=$_POST['user_username'];
         $add_user_email=$_POST['user_email'];
-        $add_user_password=$_POST['user_password'];
+        $add_user_password1=$_POST['user_password'];
+        $add_user_password=md5($add_user_password1);
         $add_user_gender=$_POST['user_gender'];
         //$add_user_image=$_POST['user_image'];
 

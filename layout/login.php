@@ -34,7 +34,7 @@
                
                
               }
-              if ($user_login_username === $username && $user_login_password === $password)
+              if ($user_login_username === $username && $user_login_password === md5($password))
               {
                 $_SESSION['id'] = $id_user_login;
                 $_SESSION['name'] = $user_login_name;

@@ -6,7 +6,8 @@
         $edit_user_name=$_POST['user_name_edit'];
         $edit_user_username=$_POST['user_username_edit'];
         $edit_user_email=$_POST['user_email_edit'];
-        $edit_user_password=$_POST['user_password_edit'];
+        $edit_user_password11=$_POST['user_password_edit'];
+        $edit_user_password=md5($edit_user_password11);
         $edit_user_gender=$_POST['user_gender_edit'];
         //$add_user_image=$_POST['user_image'];
 
