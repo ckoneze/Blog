@@ -1,2 +1,3 @@
 # Blog
 PHP Beginner to Master
+Build a complete blog application from scratch using PHP, MySQL database, Bootstrap, Javascript, Adminlte, etc...
