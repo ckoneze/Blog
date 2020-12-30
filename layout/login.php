@@ -52,7 +52,7 @@
                 
                 
               	echo " ok";
-              	header("Location: ../index.php");
+              	header("Location: ../admin/index.php");
               	
               }
               else
